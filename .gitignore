@@ -13,6 +13,7 @@
 
 # Backup-Dateien
 *.bak
+*.swp
 
 ## Intermediate documents:
 *.dvi
