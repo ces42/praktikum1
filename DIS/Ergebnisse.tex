@@ -1,11 +1,11 @@
 \section{Ergebnisse}
 
 \subsection{Kalibrierung des Thermistors}
-Um den gemessenen Widerstand im Thermistor einer Temperatur zuzuordnen, wird eine Kalibrierung durchgeführt. Hierzu wird der Thermistor in das Kältebad gehalten. Die Temperatur des Kältebades wird wieder mit dem Digitalthermometer gemessen. Die Kalibrierung wird in einem Temperaturbereich von $-4^\circ C$ bis $2^\circ C$ durchgeführt. Der Widerstand wird alle $0.5^\circ C$ Differenz gemessen, während sich das Kältebad aufwärmt (im Fall dieser Versuchsreihe wurden zusätzlich einige Zwischenwerte dokumentiert).\\
+Um den gemessenen Widerstand im Thermistor einer Temperatur zuzuordnen, wird eine Kalibrierung durchgeführt. Hierzu wird der Thermistor in das Kältebad gehalten. Die Temperatur des Kältebades wird wieder mit dem Digitalthermometer gemessen. Die Kalibrierung wird in einem Temperaturbereich von $-4^\circ C$ bis $2^\circ C$ durchgeführt. Der Widerstand wird alle $0.5^\circ C$ gemessen, während sich das Kältebad aufwärmt (im Fall dieser Versuchsreihe wurden zusätzlich einige Zwischenwerte dokumentiert).\\
 Die Temperaturkurve des Thermistors verhält sich exponentiell, allerdings ist für den entscheidenden Temperaturbereich im Bereich um die zwei Gefrierpunkte (welche in der Kalibrierung benutzt wird) eine lineare Näherung durchaus ausreichend. Die lineare Näherung\footnote{Berechnung durch Origin} besitzt eine Steigung $a$ und einen y-Achsenabschnitt $b$. Die Temperatur errechnet sich nun durch $a \cdot x + b$, wobei $x$ den Widerstand in $\unit[]{k\Omega}$ beschreibt. Folgende Werte ergeben sich bei der Annäherung an eine Gerade:
 
 \begin{align*}
-a &= \unit[(-3.215 \pm 0.024)]{\frac{K}{k\Omega}}\\
+a &= (-3.215 \pm 0.024)\frac{\text{\fontsize{9}{1}\selectfont {K}}}{\text{\fontsize{9}{1}\selectfont {k$\Omega$}}}\\
 b &= \unit[(21.55 \pm 0.17)]{^\circ C}
 \end{align*}
 %
@@ -82,9 +82,9 @@ In diesen Fehlerwerten sind alle statistischen Fehler inbegriffen, sowohl die Fe
     \label{diag:salz}
 \end{figure}
 
-Abbildungen ~\ref{diag:wasser} und \ref{diag:salz} zeige die zeitliche Entwicklung des Widerstands des Thermistor während der Abkühlung der Probe. Sie stimmen deutlich mit der in der Aufgabenstellung skizzierten Modellkurve überein (der Abfall nach dem Peak ist bei unseren Messungen jedoch steiler und tritt sehr plötzlich ein). 
+Abbildungen \ref{diag:wasser} und \ref{diag:salz} zeigen die zeitliche Entwicklung des Widerstands des Thermistors während der Abkühlung der Probe. Sie stimmen deutlich mit der in der Aufgabenstellung skizzierten Modellkurve überein (der Abfall nach dem Peak ist bei unseren Messungen jedoch steiler und tritt sehr plötzlich ein). 
 Da die Parameter der Abkühlung für das Experiment irrelevant sind wurden sie nicht kontrolliert, deshalb unterscheidet sich die genaue zeitliche Entwicklung des Widerstandes stark. Insbesondere war bei der 2. Messreihe mit der Salzlösung das Kältebad schon etwas wärmer, weshalb es lange gedauert hat bis die Lösung gefroren ist.
-
+%
 Wir erhalten für die Widerstände des Thermistors bei Schmelztemperatur jeweils $R_\mathrm{G} = \unit[(6.663 \pm 0.004)]{k\Omega}$ und $R_\mathrm{G1} = \unit[(7.023 \pm 0.004)]{k\Omega}$ (vgl. Abb.~\ref{diag:wasser} und \ref{diag:salz})
 
 \subsection{Bestimmung des Dissoziationsgrades}
