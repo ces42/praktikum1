@@ -1,0 +1,32 @@
+\section{Aufgabe 4}
+
+Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
+
+\begin{figure}    
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=\plotheight, width=\plotwidth,
+    xlabel={$p$ in $\unit[100]{kPa}$}, ylabel={$V$ in $\unit{cm^3}$},
+    only marks,
+    %xmin=-10, xmax=800,
+    legend entries={$T = \unit[25]{ ^\circ C}$, $T = \unit[30]{ ^\circ C}$, $T = \unit[35]{ ^\circ C}$,
+                    $T = \unit[40]{ ^\circ C}$, $T = \unit[42.5]{ ^\circ C}$, $T = \unit[45]{ ^\circ C}$,
+                    $T = \unit[47.5]{ ^\circ C}$, $T = \unit[50]{ ^\circ C}$, $T = \unit[55]{ ^\circ C}$,}, legend pos=north east,
+    ]
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar25.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar30.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar35.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar40.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar42.5.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar45.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar47.5.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar50.csv};
+    \addplot+[mark size=1.5] table [x=V_m, y=p, col sep=comma] {./Daten/molar55.csv};
+   \end{axis}
+    \end{tikzpicture}
+    
+    \caption{$p$-$V$ Diagramm}
+    \label{diag:pV}
+\end{figure}
+
+
