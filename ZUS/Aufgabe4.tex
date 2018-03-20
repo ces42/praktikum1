@@ -7,12 +7,12 @@
 }
 
 
-Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
+Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$.
 
 \begin{figure}    
     \begin{tikzpicture}
     \begin{axis}[
-    height=\plotheight, width=\plotwidth,
+    height=1.3\plotheight, width=\plotwidth,
     xlabel={$V$ in $\unit{dm^3\, mol^{-1}}$}, ylabel={$p$ in $\unit[100]{kPa}$},
     %caled x ticks,
     % only marks,
@@ -23,19 +23,19 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
                     kritischer Punkt}, legend pos=north east,
     ]
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar25.csv};
-    \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar30.csv};
+    \addplot+[mark size=1., error bars/.cd, y dir=both, y fixed=0.56,x dir=both, x fixed=0.025]
+             table [x=V_m, y=p, col sep=comma] {./Daten/molar30.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar35.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar40.csv};
-    \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar42.5.csv};
+    \addplot+[mark size=1.%, error bars/.cd, y dir=both, y fixed=0.56,x dir=both, x fixed=0.025
+                ]
+             table [x=V_m, y=p, col sep=comma] {./Daten/molar42.5.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar45.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar47.5.csv};
-    \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar50.csv};
+    \addplot+[mark size=1.%, error bars/.cd, y dir=both, y fixed=0.56,x dir=both, x fixed=0.025
+                ]
+             table [x=V_m, y=p, col sep=comma] {./Daten/molar50.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar55.csv};
-    
-    
-    %\draw[black, thick](axis cs:0.133,25.5)--(axis cs:0.569,25.5);
-    %\draw[black, thick](axis cs:0.133,25.9) --(axis cs:0.133,25.1);
-    %\draw[black, thick](axis cs:0.569,25.9) --(axis cs:0.569,25.1);
     
     % 25 Grad
     \plateau{0.142}{0.665}{22.83}
@@ -48,7 +48,7 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     % 42.5 Grad
     \plateau{0.178}{0.355}{34.40}
     \addplot[ color=green!90!black, only marks, mark size=2, error bars/.cd, y dir=both, x dir=both, y explicit, x explicit,]  coordinates{
-        (0.248,36.1) +- (0.024,0.75)
+        (0.245,36.7) +- (0.04, 1.0)
     };	
     
     
@@ -59,5 +59,39 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     \caption{$p$-$V$ Diagramm}
     \label{diag:pV}
 \end{figure}
+
+
+Abbildung~\ref{diag:pV} Zeigt alle aufgenommenen Isobaren. 
+
+Wir betrachten nur den Fehler der Messpunkte unserer Gruppe.
+Den Gesamtfehler der Volumenmessung schätzen wir auf $\Delta V \approx \unit[0.025]{cm^3}$ (halbe Skala). Der relative Fehler liegt somit in der Größenordnung von $1\%$ und ist somit viel größer als der Fehler in der Stoffmenge. Wir können demnach für den Fehler des molaren Volumens $\Delta V_m \approx \Delta V / n$ ansetzen.
+
+Den statistischen Fehler der Druckmessung schätzen wir auf $\unit[0.25 \e{5}]{Pa}$, Fehler des Messgeräts beträgt $\unit[0.5 \e5]{Pa}$ ($1\%$ des maximalen Ausschlags). 
+Der Übersicht halber sind die Fehlerbalken nur für eine unserer Messreihen eingetragen
+
+Es wurde versucht grob zu erkennen, wo bei den subkritischen Temperaturen die Plateaus liegen. Dies sind die Bereiche, in denen sowohl Gaß als auch Flüssigkeit vorliegen. Bei der $\unit[45]{ ^\circ C}$-Isotherme ist nicht mehr klar ob ein Plateau vorliegt. Wir schätzen den kritischen Punkt und seinen Fehler auf
+\begin{align*}
+    p_\mathrm{crit} &= \unit[(3.67 \pm 0.10)]{MPa} \\
+    V_\mathrm{m,\, crit} &= \unit[(0.245 \pm 0.04)]{dm^3\, mol^{-1}}
+\end{align*}
+
+Die Balken im Diagramm vermitteln einen ungefähren Eindruck davon, in welchen Bereich $\mathrm{S F_6}$ flüssig, gasförmig oder in Koexistenz ist. So schön wie in Abb. 3 der Aufgabenstellung lässt sich das hier jedoch nicht einzeichnen.
+
+Für die Parameter $a$ und $b$ gilt:
+%
+\begin{alignat*}{3}
+    b &= \frac{V_\mathrm{m,\, crit}}{3} &&= \unit[(0.081 \pm  0.013)]{dm^3\, mol^{-1}}\\
+    a &= 27 p_\mathrm{crit} b^2 &&= \unit[(0.66 \pm 0.22)]{m^6\, Pa\, mol^{-2}}
+\end{alignat*}
+%
+Den Fehler für $b$ erhalten wir dabei direkt aus dem Fehler für $V_\mathrm{m,\, crit}$. Der Fehler für $a$ ergibt sich mit Gauß'scher Fehlerfortpflanzung%
+\footnote{Dabei nehmen wir an das $\Delta p_\mathrm{crit}$ und $\Delta V_\mathrm{m, crit}$ unkorreliert sind.}
+aus
+\[
+    \Delta a = \sqrt{(27 b^2  \Delta p_\mathrm{crit})^2 +
+                     (27 p_\mathrm{crit} \cdot 2 b \cdot \Delta b)^2}
+\]
+
+Für ein Teilchen, also $n \approx \unit[1.6605\e{-24}]{mol}$ erhalten wir $b \cdot n = \unit[(0.136 \pm 0.022)]{nm^3}$. Dies suggeriert das die Moleküle einen Radius von ca. $\left( \frac{3}{4\pi} b n \right)^{1/3} = \unit[(317 \pm 17)]{pm}$ haben. Aus $a$ erhalten wir $n^2 \cdot a = \unit[(1.8 \pm 0.6)]{m^6 Pa}$. Da dies ein Volumenabhängiger Wechselwirkungsparameter ist, ist er in diesem Fall nicht besonders aussagekräftig.
 
 
