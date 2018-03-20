@@ -7,7 +7,7 @@
 }
 
 
-Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
+Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$.
 
 \begin{figure}    
     \begin{tikzpicture}
@@ -48,7 +48,7 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     % 42.5 Grad
     \plateau{0.178}{0.355}{34.40}
     \addplot[ color=green!90!black, only marks, mark size=2, error bars/.cd, y dir=both, x dir=both, y explicit, x explicit,]  coordinates{
-        (0.248,36.1) +- (0.024,0.75)
+        (0.245,36.7) +- (0.04, 1.2)
     };	
     
     
@@ -59,5 +59,19 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     \caption{$p$-$V$ Diagramm}
     \label{diag:pV}
 \end{figure}
+
+
+Abbildung~\ref{diag:pV} Zeigt alle aufgenommenen Isobaren. 
+
+Wir betrachten nur den Fehler der Messpunkte unserer Gruppe.
+Den Gesamtfehler der Volumenmessung schätzen wir auf $\Delta V \approx \unit[0.025]{cm^3}$ (halbe Skala). Der relative Fehler liegt somit in der Größenordnung von $1\%$ und ist somit viel größer als der Fehler in der Stoffmenge. Wir können demnach für den Fehler des molaren Volumens $\Delta V_m \approx \Delta V / n$ ansetzen.
+
+Den statistischen Fehler der Druckmessung schätzen wir auf $\unit[0.25 \e{5}]{Pa}$, Fehler des Messgeräts beträgt $\unit[0.5 \e5]{Pa}$ ($1\%$ des maximalen Ausschlags).
+
+Es wurde versucht grob zu erkennen, wo bei den subkritischen Temperaturen die Plateaus liegen. Dies sind die Bereiche, in denen sowohl Gaß als auch Flüssigkeit vorliegen. Bei der $\unit[45]{ ^\circ C}$-Isotherme ist nicht mehr klar ob ein Plateau vorliegt. Wir schätzen den kritischen Punkt und seinen Fehler auf
+\begin{align*}
+    p_\mathrm{crit} &= \unit[(3.67 \pm 0.12)]{MPa} \\
+    V_\mathrm{crit} &= \unit[(0.245 \pm 0.04)]{dm^3\, mol^{-1}}
+\end{align*}
 
 
