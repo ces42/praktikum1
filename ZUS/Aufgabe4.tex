@@ -75,7 +75,7 @@ Es wurde versucht grob zu erkennen, wo bei den subkritischen Temperaturen die Pl
     V_\mathrm{m,\, crit} &= \unit[(0.245 \pm 0.04)]{dm^3\, mol^{-1}}
 \end{align*}
 
-Die Balken im Diagramm vermitteln einen ungefähren Eindruck in welchen Bereich $\mathrm{S F_6}$ flüssig, gasförmig oder in Koexistenz ist. So schön wie in Abb. 3 der Aufgabenstellung lässt sich das hier jedoch nicht einzeichnen.
+Die Balken im Diagramm vermitteln einen ungefähren Eindruck davon, in welchen Bereich $\mathrm{S F_6}$ flüssig, gasförmig oder in Koexistenz ist. So schön wie in Abb. 3 der Aufgabenstellung lässt sich das hier jedoch nicht einzeichnen.
 
 Für die Parameter $a$ und $b$ gilt:
 %
@@ -84,7 +84,14 @@ Für die Parameter $a$ und $b$ gilt:
     a &= 27 p_\mathrm{crit} b^2 &&= \unit[(0.66 \pm 0.22)]{m^6\, Pa\, mol^{-2}}
 \end{alignat*}
 %
-Den Fehler für $a$ erhalten wir dabei direkt aus dem Fehler für $V_\mathrm{m,\, crit}$
+Den Fehler für $b$ erhalten wir dabei direkt aus dem Fehler für $V_\mathrm{m,\, crit}$. Der Fehler für $a$ ergibt sich mit Gauß'scher Fehlerfortpflanzung%
+\footnote{Dabei nehmen wir an das $\Delta p_\mathrm{crit}$ und $\Delta V_\mathrm{m, crit}$ unkorreliert sind.}
+aus
+\[
+    \Delta a = \sqrt{(27 b^2  \Delta p_\mathrm{crit})^2 +
+                     (27 p_\mathrm{crit} \cdot 2 b \cdot \Delta b)^2}
+\]
 
+Für ein Teilchen, also $n \approx \unit[1.6605\e{-24}]{mol}$ erhalten wir $b \cdot n = \unit[(0.136 \pm 0.022)]{nm^3}$. Dies suggeriert das die Moleküle einen Radius von ca. $\left( \frac{3}{4\pi} b n \right)^{1/3} = \unit[(317 \pm 17)]{pm}$ haben. Aus $a$ erhalten wir $n^2 \cdot a = \unit[(1.8 \pm 0.6)]{m^6 Pa}$. Da dies ein Volumenabhängiger Wechselwirkungsparameter ist, ist er in diesem Fall nicht besonders aussagekräftig.
 
 
