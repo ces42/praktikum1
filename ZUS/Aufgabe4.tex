@@ -19,7 +19,8 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     %xmin=-10, xmax=800,
     legend entries={$T = \unit[25]{ ^\circ C}$, $T = \unit[30]{ ^\circ C}$, $T = \unit[35]{ ^\circ C}$,
                     $T = \unit[40]{ ^\circ C}$, $T = \unit[42.5]{ ^\circ C}$, $T = \unit[45]{ ^\circ C}$,
-                    $T = \unit[47.5]{ ^\circ C}$, $T = \unit[50]{ ^\circ C}$, $T = \unit[55]{ ^\circ C}$,}, legend pos=north east,
+                    $T = \unit[47.5]{ ^\circ C}$, $T = \unit[50]{ ^\circ C}$, $T = \unit[55]{ ^\circ C}$,
+                    kritischer Punkt}, legend pos=north east,
     ]
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar25.csv};
     \addplot+[mark size=1.] table [x=V_m, y=p, col sep=comma] {./Daten/molar30.csv};
@@ -38,12 +39,16 @@ Wir berechnen die molaren Volumina durch $V_\mathrm{m} = V / n$
     
     % 25 Grad
     \plateau{0.142}{0.665}{22.83}
+    % 30 Grad
     \plateau{0.142}{0.603}{25.28}
+    % 35 Grad
     \plateau{0.179}{0.498}{29.29}
+    % 40 Grad
     \plateau{0.160}{0.408}{32.43}
+    % 42.5 Grad
     \plateau{0.178}{0.355}{34.40}
-    \addplot[ color=red, only marks, mark size=2, error bars/.cd, y dir=both, x dir=both, y explicit, x explicit,]  coordinates{
-        (0.248,36.1) +- (0.024,0.7)
+    \addplot[ color=green!90!black, only marks, mark size=2, error bars/.cd, y dir=both, x dir=both, y explicit, x explicit,]  coordinates{
+        (0.248,36.1) +- (0.024,0.75)
     };	
     
     
