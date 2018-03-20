@@ -1,7 +1,17 @@
-\subsection{Verwendete Methoden}
-\subsubsection{ideale Gase}
+\section{Verwendete Methoden}
+\subsection{ideale Gase}
 Unter idealen Gasen versteht man Gase, dessen Moleküle nicht miteinander wechselwirken und die kein Eigenvolumen besitzen. Solche Gase existieren in der Realität nicht, für Gase unter sehr geringem Druck kann dieses Modell allerdings als gute Näherung verwendet werden. Für ideale Gase gilt folgende Gleichung:
 \begin{equation}
 p \cdot V = n \cdot R \cdot T
 \end{equation}
-wobei $p$ der Druck, $V$ das Volumen $n$ die Stoffmenge, $R$ die allgemeine Gaskonstante $R=8,3144621 \frac{\text{\fontsize{9}{1}\selectfont {J}}}{\text{\fontsize{9}{1}\selectfont {mol K}}}$
+wobei $p$ der Druck $[\mathrm{Pa}]$, $V$ das Volumen $[\mathrm{m^3}]$, $n$ die Stoffmenge $[\mathrm{mol}]$, $R$ die allgemeine Gaskonstante $R=8,3144621 \frac{\text{\fontsize{9}{1}\selectfont {J}}}{\text{\fontsize{9}{1}\selectfont {mol K}}}$ und $T$ die Temperatur $[\mathrm{K}]$.
+\subsection{reelle Gase}
+Für höhere Drücke kann die Näherung an ein ideales Gas nicht mehr verwendet werden, man benötigt die umfangreichere Gleichung für reelle Gase, welche als Van der Waals-Gleichung bekannt ist:
+\begin{equation}
+(p+\left(\frac{n}{V}\right)^2 \cdot a)(V - n \cdot b)
+\end{equation}
+Hierbei ist $a$ der Korrekturfaktor für die Dipol-Wechselwirkung zwischen den Teilchen (Binnendruck) und $b$ der Korrekturfaktor für das Eigenvolumen der Teilchen (Kovolumen). Bei Temperaturen unter der kritischen Temperatur haben die Kurven, die sich aus der Van der Waals-Gleichung ergeben (Isotherme) zwei Extrema und einen Wendepunkt. Bei einer gewissen Temperatur fallen diese zwei Maxima zusammen, dies nennt sich die kritische Temperatur, zudem lässt sich der zugehörige kritische Druck ermitteln. Für Temperaturen $< T_{krit}$ ergeben sich durch die theoretischen Isotherme Bereiche, in denen der Druck bei steigendem Volumen zunehmen würde. Dies ist physikalisch nicht sinnvoll, in der Realität verringert sich die Flüssigkeit hier bei steigendem Volumen, somit bleibt der Druck konstant. Dies wird der Dampfdruck einer Flüssigkeit genannt. Dieser Koexistenzbereich wird durch das Gasvolumen $V_g$ und dem Flüssigkeitsvolumen $V_{fl}$ begrenzt. Für Temperaturen oberhalb der kritischen Temperatur existiert kein Koexistenzbereich, das Gas kann nicht mehr verflüssigt werden und nähert sich bei großem Volumen einem idealen Gas an.\\
+Der Dampfdruck ist Temperaturabhängig und kann mithilfe der Dampfdruckkurve grafisch dargestellt werden. Die Steigung dieser Kurve hängt von der von Clausius und Clapeyron erforschten molaren Verdampfungsenthalpie $L$ ab:
+\begin{equation}
+\frac{dp_d}{dT} = \frac{L}{T \cdot (V_g-V_{fl})}
+\end{equation}
