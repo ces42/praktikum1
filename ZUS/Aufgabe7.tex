@@ -1,0 +1,28 @@
+\section{Bestimmung der Verdampfungsenthalpie}
+
+Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV}. Um $p_d$ zu erhalten wurden der Mittelwert aller Werte von $p$, von denen wir meinen, dass sie Teil des Plateaus sind, genommen. Um den Fehler $\Delta p_d$ abzuschätzen bilden wir die Standardabweichung des Mittelwerts dieser Werte und multiplizieren diese Pauschal mit einem Faktor von $4$ (Korrektur für Fehler beim "`Augenmaß"'). 
+
+
+\begin{figure}    
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=\plotheight, width=\plotwidth,
+    xlabel={$1/T$ in $\unit{K^{-1}}$}, ylabel={$p$ in $\unit[100]{kPa}$},
+    ymode=log,
+    only marks,
+    % xmin=-10, xmax=800,
+    % legend entries={}, legend pos=north east,
+    ]
+    \addplot+[error bars/.cd, y dir=both, x dir=both, y explicit, x explicit]
+             table [x=t, y=p, x error=err_t, y error=err_p, col sep=comma] {./Daten/arrhenius.csv};
+    
+    \end{axis}
+    
+    \end{tikzpicture}
+    
+    \caption{$p$-$V$ Diagramm}
+    \label{diag:arr}
+\end{figure}
+
+
+
