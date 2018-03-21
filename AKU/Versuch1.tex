@@ -5,10 +5,10 @@ Der Fehler der Laufzeit wurde als die Standardabweichung der gemessenen Laufzeit
 \begin{table}
     \centering
 \begin{tabular}[h]{c c c c c }
-    Material & Länge in $\unit{cm}$ & Laufzeit in $\unit{\mu s}$ & $c_\mathrm{S}$ in $\unit{m/s}$ \\\hline
-    Cu & $1.498$ & $770 \pm 40$ & $3870 \pm 200$ \\
-    Al & $1.499$ & $610 \pm 30$ & $4950 \pm 260$ \\
-    PVC & $1.024$ & $1310 \pm 50$ & $1560 \pm 60$ \\
+    Material & Länge in $\unit{cm}$ & Laufzeit in $\unit{\mu s}$ & $c_\mathrm{S}$ in $\unit{m/s}$ & Elastizitätsmodule in $\unit{GPa}$\\\hline
+    Cu & $1.498$ & $770 \pm 40$ & $3870 \pm 200$ & $134 \pm 14$\\
+    Al & $1.499$ & $610 \pm 30$ & $4950 \pm 260$ & $66 \pm 7$\\
+    PVC & $1.024$ & $1310 \pm 50$ & $1560 \pm 60$ & $3.41 \pm 0.29$\\
 \end{tabular}
 \caption{Ergebnisse für Kupfer, Aluminium und PVC}
 \label{tb:res}
@@ -21,8 +21,11 @@ Werte für die Schallgeschwindigkeit von $\unit[3810]{m/s}$ und $\unit[5000]{m/s
 Gleichung~\ref{eq:elast} liefert
 %
 \begin{equation*}
-    E = \rho^2 c_\mathrm{S}
+    E = \rho {c_\mathrm{S}}^2
 \end{equation*}
 %
-
+womit die Werte in Tabelle~\ref{tb:res} berechnet wurden. Da der relative Fehler in $c_\mathrm{s}$ deutlich größer ist als der in $\rho$ (und zudem doppelt so stark in den Endfehler eingeht), ergibt sich der Fehler von $E$ zu
+\[
+    \Delta E \approx \rho c_\mathrm{s} \cdot \Delta c_\mathrm{S}
+\]
 
