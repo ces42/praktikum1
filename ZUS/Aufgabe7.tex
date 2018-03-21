@@ -1,9 +1,9 @@
 \subsection{Bestimmung der Verdampfungsenthalpie}
 
-Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV}. Um $p_d$ zu erhalten wurden der Mittelwert aller Werte von $p$, von denen wir meinen, dass sie Teil des Plateaus sind, genommen. Um den Fehler $\Delta p_d$ abzuschätzen bilden wir die Standardabweichung des Mittelwerts dieser Werte und multiplizieren diese Pauschal mit einem Faktor von $4$ (Korrektur für Fehler beim "`Augenmaß"'). 
-
+Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV}. Um $p_d$ zu erhalten wurden der Mittelwert aller Werte von $p$, von denen wir meinen, dass sie Teil des Plateaus sind, genommen. Um den Fehler $\Delta p_d$ abzuschätzen bilden wir die Standardabweichung des Mittelwerts dieser Werte und multiplizieren diese pauschal mit einem Faktor von $4$ (Korrektur für Fehler beim "`Augenmaß"'). \\
+%
 Der Fehler von $T$ ergibt sich aus dem Systematischen Fehler des Messgeräts von $\unit[0.2]{K}$ und dem Fehler aufgrund von Schwankungen in der Temperatur, den wir ebenfalls auf $\unit[0.2]{K}$ schätzen.
-
+%
 \begin{figure}    
     \begin{tikzpicture}
     \begin{axis}[
@@ -24,23 +24,24 @@ Der Fehler von $T$ ergibt sich aus dem Systematischen Fehler des Messgeräts von
     \caption{Dampfdruck über reziproke Temperatur}
     \label{diag:arr}
 \end{figure}
-
+%
 In Abbildung~\ref{diag:arr} sind die $5$ Dampfdrücke logarithmisch über $1/T$ aufgetragen. Die gewichtete Regression
 %
 \begin{equation}
 p_d \propto e^{-m/T} \label{eq:pd}
 \end{equation}
 %
-ergibt einen Wert von $m = \unit[(2.28 \pm 0.07)\e3]{K}$. Zusammen mit Gleichung~\ref{eq:cc} erhalten wir aus Gleichung~\ref{eq:pd}
+ergibt einen Wert von $m = \unit[(2.28 \pm 0.07)\e3]{K}$. Zusammen mit Gleichung~\ref{eq:cc} erhalten wir aus Gleichung~\ref{eq:pd}:
 \begin{align*}
     \frac{L}{T (V_\mathrm{g} - V_\mathrm{fl})} &= p_d \frac{m}{T^2} \\
                                              L &= \frac{m \, p_d (V_\mathrm{g} - V_\mathrm{fl})}{T}
 \end{align*}
-
-Dies liefert uns Werte für $L$ für verschiedene Temperaturen. Alle Fehler aus die von $V_\mathrm{g}$ und $V_\mathrm{fl}$ sind vernachlässigbar und man erhält somit 
+%
+Dies liefert uns Werte für $L$ für verschiedene Temperaturen. Alle Fehler aus die von $V_\mathrm{g}$ und $V_\mathrm{fl}$ sind vernachlässigbar und man erhält somit:
 \[
     \Delta L = \frac{m p_d}{T} \sqrt{{\Delta V_\mathrm{g}}^2 + {\Delta V_\mathrm{fl}}^2}
 \]
+    %
 Die Fehler von $\Delta V_\mathrm{g}$ und $\Delta V_\mathrm{fl}$ wurden dabei jeweils anhand dessen, wie gut der Balken des Koexistenzbereiches in das Plateau passt, abgeschätzt%
 \footnote{\url{https://github.com/ces42/praktikum1/tree/master/ZUS/Daten/Auswertung.ipynb}}%
 . Die Ergebnisse sind in Abbildung~\ref{diag:L} dargestellt.
