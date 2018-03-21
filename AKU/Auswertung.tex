@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{pgf,tikz}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usepackage{epstopdf}
+\usepackage{units}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{Akustik (AKU)}
+\author{Kilian Brenner und Carlos Esparza \\ Team 13, Gruppe 6}
+
+\date{19.03.2018}
+
+
+\pgfplotsset{compat=newest,
+    tick label style={font=\small},
+    label style={font=\small},
+    legend style={font=\footnotesize}
+}
+
+%\tikzset{every mark/.append style={scale=0.3}}
+\newlength{\plotheight}
+\newlength{\plotwidth}
+\newlength{\imgheight}
+\setlength{\plotwidth}{\textwidth}
+\setlength{\plotheight}{11cm}
+
+\newcommand{\e}[1]{\cdot\!10^{#1}}
+\renewcommand{\d}{\mathrm{d}}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+
+\input{Methoden.tex}
+
+\input{Vorgehen.tex}
+
+\input{Ergebnisse.tex}
+
+\input{Diskussion.tex}
+
+\input{Zusammenfassung.tex}
+
+
+% \begin{appendix}
+% \addcontentsline{toc}{section}{Anhang}
+% \input{Fehlerrechnung.tex}
+% \end{appendix}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
