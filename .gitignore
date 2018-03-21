@@ -11,6 +11,9 @@
 *.cb
 *.cb2
 
+# jupyter checkpoints
+-checkpoint.ipynb
+
 # Backup-Dateien
 *.bak
 *.swp
