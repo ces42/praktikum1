@@ -1,7 +1,8 @@
-\section{Bestimmung der Verdampfungsenthalpie}
+\subsection{Bestimmung der Verdampfungsenthalpie}
 
 Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV}. Um $p_d$ zu erhalten wurden der Mittelwert aller Werte von $p$, von denen wir meinen, dass sie Teil des Plateaus sind, genommen. Um den Fehler $\Delta p_d$ abzuschätzen bilden wir die Standardabweichung des Mittelwerts dieser Werte und multiplizieren diese Pauschal mit einem Faktor von $4$ (Korrektur für Fehler beim "`Augenmaß"'). 
 
+Der Fehler von $T$ ergibt sich aus dem Systematischen Fehler des Messgeräts von $\unit[0.2]{K}$ und dem Fehler aufgrund von Schwankungen in der Temperatur, den wir ebenfalls auf $\unit[0.2]{K}$ schätzen.
 
 \begin{figure}    
     \begin{tikzpicture}
@@ -20,10 +21,56 @@ Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV
     
     \end{tikzpicture}
     
-    \caption{$p$-$V$ Diagramm}
+    \caption{Dampfdruck über reziproke Temperatur}
     \label{diag:arr}
 \end{figure}
 
-In Abbildung~\ref{diag:arr} sind die $5$ Dampfdrücke logarithmisch über $1/T$ aufgetragen. Die gewichtete Regression $p_d \propto e^{-m/T}$ ergibt einen Wert von $m = \unit[(2.28 \pm 0.07)]{K}$
+In Abbildung~\ref{diag:arr} sind die $5$ Dampfdrücke logarithmisch über $1/T$ aufgetragen. Die gewichtete Regression
+%
+\begin{equation}
+p_d \propto e^{-m/T} \label{eq:pd}
+\end{equation}
+%
+ergibt einen Wert von $m = \unit[(2.28 \pm 0.07)\e3]{K}$. Zusammen mit Gleichung~\ref{eq:cc} erhalten wir aus Gleichung~\ref{eq:pd}
+\begin{align*}
+    \frac{L}{T (V_\mathrm{g} - V_\mathrm{fl})} &= p_d \frac{m}{T^2} \\
+                                             L &= \frac{m \, p_d (V_\mathrm{g} - V_\mathrm{fl})}{T}
+\end{align*}
 
+Dies liefert uns Werte für $L$ für verschiedene Temperaturen. Alle Fehler aus die von $V_\mathrm{g}$ und $V_\mathrm{fl}$ sind vernachlässigbar und man erhält somit 
+\[
+    \Delta L = \frac{m p_d}{T} \sqrt{{\Delta V_\mathrm{g}}^2 + {\Delta V_\mathrm{fl}}^2}
+\]
+Die Fehler von $\Delta V_\mathrm{g}$ und $\Delta V_\mathrm{fl}$ wurden dabei jeweils anhand dessen, wie gut der Balken des Koexistenzbereiches in das Plateau passt, abgeschätzt. Die Ergebnisse sind in Abbildung~\ref{diag:L} dargestellt.
+
+\begin{figure}
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=\plotheight, width=\plotwidth,
+    xlabel={$T$ in $\unit{ ^\circ C}$}, ylabel={$L$ in $\unit{kJ\, mol^{-1}}$},
+    only marks,
+    % xmin=-10, xmax=800,
+    ]
+    \addplot+[error bars/.cd, y dir=both, x dir=both, y explicit, x explicit]
+    table [x=T, y=L, x error=err_T, y error=err_L, col sep=comma] {./Daten/L.csv};
+    \end{axis}
+    
+    \end{tikzpicture}
+    
+    \caption{Verdampfungsenthalpie für verschiedene Temperaturen}
+    \label{diag:L}
+\end{figure}
+
+
+\subsection{Vergleich mit Literaturwerten}
+
+In der Literatur%
+\footnote{David R. Lide: Handbook of Chemistry and Physics, CRC Press, 85. Auflage, Seite 6-43}
+finden wir die Werte $a = \unit[0.7857]{m^6\, Pa\, mol^{-1}}$ und $b = \unit[0.0879]{dm^4\, mol^{-1}}$. Diese stimmen im Rahmen des Fehlers mit unseren Werten überein. Für die Verdampfungsenthalpie bei $\unit[25]{ ^\circ C}$ finden wir%
+\footnote{David R. Lide: Handbook of Chemistry and Physics, CRC Press, 85. Auflage, Seite 6-109}
+einen Wert von $L = \unit[8.99]{kJ\, mol^{-1}}$. Dieser Wert stimmt sogar sehr gut mit unserem überein.
+
+\subsection{Variation des Drucks nach der Volumenänderung}
+
+Während man das Volumen verstellt hat das Gas fast keine Zeit Wärme mit seiner Umgebung auszutauschen, d.\,h.\ es liegt (näherungsweise) eine adiabatische Zustandsänderung vor, bei der sich der Druck, aber auch die Temperatur ändert. Nachdem das Volumen nicht mehr ändert ist die Temperatur des Gases und seiner Umgebung noch unterschiedlich und es kommt erst mal zu einer isochoren Zustandsänderung des Gases, bei der sich der Druck ebenfalls ändert. Erst nachdem das Gas die selbe Temperatur wie seine Umgebung hat, bleibt der Druck stationär.
 
