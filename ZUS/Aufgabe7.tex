@@ -11,11 +11,11 @@ Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV
     ymode=log,
     only marks,
     % xmin=-10, xmax=800,
-    % legend entries={}, legend pos=north east,
+    legend entries={Messwerte, Regression}, legend pos=north east,
     ]
     \addplot+[error bars/.cd, y dir=both, x dir=both, y explicit, x explicit]
              table [x=t, y=p, x error=err_t, y error=err_p, col sep=comma] {./Daten/arrhenius.csv};
-    
+    \addplot+[domain=0.00316:0.00336, color=red, smooth, thick, mark size=0] {exp(10.75899086) * exp(-2279.861837*x)};
     \end{axis}
     
     \end{tikzpicture}
@@ -24,5 +24,6 @@ Der Dampfdruck $p_d$ ist gerade der Druck der Plateaus in Abbildung~\ref{diag:pV
     \label{diag:arr}
 \end{figure}
 
+In Abbildung~\ref{diag:arr} sind die $5$ Dampfdrücke logarithmisch über $1/T$ aufgetragen. Die gewichtete Regression $p_d \propto e^{-m/T}$ ergibt einen Wert von $m = \unit[(2.28 \pm 0.07)]{K}$
 
 
