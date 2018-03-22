@@ -12,7 +12,7 @@
 *.cb2
 
 # jupyter checkpoints
-*checkpoint.ipynb
+*-checkpoint.ipynb
 
 # Backup-Dateien
 *.bak
