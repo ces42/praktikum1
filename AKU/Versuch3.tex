@@ -1,3 +1,4 @@
+% !TeX spellcheck = de_DE
 \subsection{Bestimmung der Schallgeschwindigkeit über stehende Wellen}
 
 \begin{figure}    
@@ -44,5 +45,19 @@ Diagramm~\ref{diag:max} Zeigt die gemessenen Positionen $l$ der Maxima für
 Die Fehler rühren aus dem inhärenten systematischen Fehler des Messgeräts sowie der Schwankung der angezeigten Frequenz während der Messung. Die Ausgleichsgeraden haben nach Theorie eine Steigung von $\lambda/2$, womit wir erhalten%
 \footnote{\texttt{scipy.stats.linregress}}%
 \[
-    \lambda_1 = \unit[(34.54 \pm 0.06)]{cm}, \quad \lambda_2 = \unit[(52.85 \pm 0.03)]{cm},  \quad \lambda_3 = \unit[(22.93 \pm 0.12)]{cm}
+    \lambda_1 = \unit[(34.54 \pm 0.11)]{cm}, \quad \lambda_2 = \unit[(52.85 \pm 0.28)]{cm},  \quad \lambda_3 = \unit[(22.93 \pm 0.12)]{cm}
 \]
+
+Hieraus ergebene sich 3 verschiedene Werte mit Fehler für $c_\mathrm{S}$, die gewichtet addiert werden um den finalen Wert
+\[
+	c_\mathrm{S} = \unit[(345.5 \pm 0.7)]{m/s}
+\]
+zu erhalten.
+
+%TODO vergleich mit voreriger Aufgabe
+
+Aus der Literatur%
+\footnote{David R. Lide: Handbook of Chemistry and Physics, CRC Press, 85. Auflage, Seite 14-41}
+erhalten wir Werte von $c_\mathrm{S}$ für $\unit[20]{ ^\circ C}$ und $\unit[25]{ ^\circ C}$. Interpolation liefert für unsere Temperatur von $\unit[22.8]{ ^\circ C}$ einen Wert von $\unit[345.02]{m/s}$, was, im Rahmen des Fehlers, mit unserem Wert überinstimmt.
+
+
