@@ -1,0 +1,63 @@
+% !TeX spellcheck = de_DE
+\subsection{Bestimmung der Schallgeschwindigkeit über stehende Wellen}
+
+\begin{figure}    
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=\plotheight, width=\plotwidth,
+    xlabel={$n$}, ylabel={$l$ in $\unit{cm}$},
+    only marks,
+    xtick={2, 3, 4, 5, 6, 7},
+    xmin=1.5, xmax=7.5,
+    legend entries={$f_1 \approx \unit[1]{kHz}$, Regression, $f_2 \approx \unit[650]{Hz}$, Regression, $f_3 \approx \unit[1.5]{kHz}$, Regression}, legend pos=south east,
+    ]
+    % \addplot[error bars/.cd, y dir=both, y explicit]
+    \addplot+ [blue!90!black, mark=o, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_auf, col sep=comma] {./Daten/freq1.csv};
+    \addplot+ [blue!90!black, mark=o, forget plot, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_ab, col sep=comma] {./Daten/freq1.csv};
+    
+    \addplot[domain=1.9:6.1, color=blue!50!white, smooth, thick, mark size=0] {17.27*x + -11.79};
+    
+    \addplot+ [red!90!black, mark=square, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_auf, col sep=comma] {./Daten/freq2.csv};
+    \addplot+ [red!90!black, mark=square, forget plot, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_ab, col sep=comma] {./Daten/freq2.csv};
+    \addplot[domain=1.9:4.1, color=red!60!white, smooth, thick, mark size=0] {26.425*x + -15.56};
+    
+    \addplot+ [green!80!black, mark=diamond, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_auf, col sep=comma] {./Daten/freq3.csv};
+    \addplot+ [green!80!black, mark=diamond, forget plot, error bars/.cd, y dir=both, y fixed=1.5]
+    table [x=n, y=l_ab, col sep=comma] {./Daten/freq3.csv};
+    \addplot[domain=1.9:7.1, color=green!60!white, smooth, thick, mark size=0] {11.466*x + -8.396};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \caption{gemessene Maxima}
+    \label{diag:max}
+\end{figure}
+
+
+Diagramm~\ref{diag:max} Zeigt die gemessenen Positionen $l$ der Maxima für 
+\[
+    f_1 = \unit[(1001.5 \pm 1.1)]{Hz}, \quad f_2 = \unit[(651.68 \pm 0.04)]{Hz}, \quad f_3 = \unit[(1508.6 \pm 0.4)]{Hz}
+\]
+Die Fehler rühren aus dem inhärenten systematischen Fehler des Messgeräts sowie der Schwankung der angezeigten Frequenz während der Messung. Die Ausgleichsgeraden haben nach Theorie eine Steigung von $\lambda/2$, womit wir erhalten%
+\footnote{\texttt{scipy.stats.linregress}}%
+\[
+    \lambda_1 = \unit[(34.54 \pm 0.11)]{cm}, \quad \lambda_2 = \unit[(52.85 \pm 0.28)]{cm},  \quad \lambda_3 = \unit[(22.93 \pm 0.12)]{cm}
+\]
+
+Hieraus ergebene sich 3 verschiedene Werte mit Fehler für $c_\mathrm{S}$, die gewichtet addiert werden um den finalen Wert
+\[
+	c_\mathrm{S} = \unit[(345.5 \pm 0.7)]{m/s}
+\]
+zu erhalten.
+
+%TODO vergleich mit voreriger Aufgabe
+
+Aus der Literatur%
+\footnote{David R. Lide: Handbook of Chemistry and Physics, CRC Press, 85. Auflage, Seite 14-41}
+erhalten wir Werte von $c_\mathrm{S}$ für $\unit[20]{ ^\circ C}$ und $\unit[25]{ ^\circ C}$. Interpolation liefert für unsere Temperatur von $\unit[22.8]{ ^\circ C}$ einen Wert von $\unit[345.02]{m/s}$, was, im Rahmen des Fehlers, mit unserem Wert überinstimmt.
+
+
