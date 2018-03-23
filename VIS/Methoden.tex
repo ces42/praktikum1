@@ -8,10 +8,26 @@ The viscosity can be defined using the following formula
 \]
 Where $b$ is the distance between the two plates and $F/A$ is the force per Area resulting from "friction".
 
-In case of a Newtonian Liquid (viscosity is independent of speed) and laminar flow  we can derive the \emph{Hagen-Poiseuille-Law} 
+In case of a Newtonian liquid (viscosity is independent of speed) and laminar flow  we can derive the \emph{Hagen-Poiseuille-Law} 
 \[
     i = \frac{\pi r^4 \Delta p}{8 \eta \ell} \label{eq:hp}
 \]
 which describes the flow $i$ through a cylindrical pipe of radius $r$ and length $l$, when there is a pressure difference $\Delta p$ along it.
 
-Another Phenomenon involving viscosity is \emph{Stokes Drag}. It appear
+Another Phenomenon involving viscosity is \emph{Stokes' drag}. This phenomenon occurs when a ball of radius $r$ falls with speed $v$ through a liquid flowing around it in laminar fashion. The drag on the ball is given by
+\[
+    F = 6 \pi \eta r v \label{eq:stokes}
+\]
+If we assume that the ball is falling with terminal velocity, i.\,e. there is an equilibrium of the drag, the buoyancy and the gravitational Force exerted on the ball, we get
+\[
+    \eta = \frac{2 r^2 g}{9 v}(\rho_\mathrm{ball} - \rho_\mathrm{fl}) \label{eq:termid}
+\]
+However this equation only holds in the Limit $r \to 0$. 
+If we assume that the ball is falling through a cylinder of radius $R$ and not near the caps we get the corrected formula
+\[
+    \eta = \frac{2 r^2 g}{9 v \left( 1 + 2.4 \frac{r}{R} \right)}(\rho_\mathrm{ball} - \rho_\mathrm{fl}) \label{eq:term}
+\]
+
+
+
+
