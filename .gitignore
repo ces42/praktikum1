@@ -12,6 +12,7 @@
 *.cb2
 
 # jupyter checkpoints
+.ipynb_checkpoints
 *-checkpoint.ipynb
 
 # Backup-Dateien
