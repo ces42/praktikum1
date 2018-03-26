@@ -1,0 +1,63 @@
+\subsection{Falling Sphere Viscometer}
+In this experiment, the temperature has the value of $22.5\C$. To determine the viscosity $\eta$ we need to know the mass of the bowls $m$, the radius of the bowls $r$, the length of the tube $\ell$ in which we measure the time that the bowl needs falling $t$, the radius of the tube $R$ and the density of the fluid $\rho_{fl}$. For these Values, we get the following values with the systematic (first term) and the statistic (second term) errors:
+\begin{align*}
+m &= \unit[(166.05\e{-3} \pm 0.05\e{-3} \pm 0.02 \e{-3})]{g}\\
+r &= \unit[(2.505 \pm 0.003)]{mm}\\
+\ell &= \unit[(372 \pm 0.5)]{mm}\\
+R &= \unit[(26,675 \pm 0.015)]{mm}\\
+\rho_{fl} &= \unit[(2.20 \pm 0.03)]{\frac{g}{cm^3}}\\
+t &= \unit[2.81 \pm 0.03 \pm 0.05]{sek}
+\end{align*}
+
+
+
+
+
+The partial derivations of formula \ref{eq:termid} (dependent on the mass of the bowls instead of density; $\rho = \frac{3m_b}{4r^3\pi}$) give the following terms:
+\begin{align*}
+\frac{\partial \eta}{\partial l}  &= \frac{g t \left(-3 m+4 \pi  r^3 \rho_{fl}\right)}{18 l^2 \pi  r}\\
+\frac{\partial \eta}{\partial r} &= \frac{g t \left(3 m+8 \pi  r^3 \rho_{fl}\right)}{18 l \pi  r^2}\\
+\frac{\partial \eta}{\partial m} &= \frac{g t}{6 l \pi  r}\\
+\frac{\partial \eta}{\partial t} &= \frac{2 g r^2 \left(\frac{3 m}{4 \pi  r^3}- \rho_{fl}\right)}{9 l}\\
+\frac{\partial \eta}{\partial \rho_{fl}} &= \frac{2 g r^2 t}{9 l}
+\end{align*}
+
+We get for the systematic error:
+
+\begin{equation}
+\abs{\left(\Delta l\frac{\partial \eta}{\partial l}\right)}
++
+\abs{\left(\Delta r\frac{\partial \eta}{\partial r}\right)}
++
+\abs{\left(\Delta m\frac{\partial \eta}{\partial m}\right)}
++
+\abs{\left(\Delta t\frac{\partial \eta}{\partial t}\right)}
++
+\abs{\left(\Delta \rho_{fl}\frac{\partial \eta}{\partial \rho_{fl}}\right)}
+\approx \unit[4.85]{mPa s}
+\end{equation}
+
+Together with the statistical errors, we get the final error with:
+
+\begin{equation}
+\Delta \eta = \sqrt{\left(\Delta \eta_1\right)^2 + \left(
+\Delta t_{stat} \cdot \Delta t\frac{\partial \eta}{\partial t}
+\right)^2 +
+\left(
+\Delta m_{stat} \cdot \Delta t\frac{\partial \eta}{\partial m}^2
+\right)}
+\approx \unit[5.42]{mPa s}
+\end{equation}
+
+The gravitational acceleration for Garching, is $g = \unitfrac[9.82941]{m}{s^2}$. The error of this constant can be neglected. Therefore the viscosity is $\eta = \unit[136.9 \pm 5.42)]{mPa s} $.\\
+Using the more appropriate formula \ref{eq:term} for tubes with limited radius $R$:
+\begin{equation}
+\eta = \unit[111.74 \pm 4.43]{mPa s}
+\end{equation}
+These values are a little lower than expected\footnote{Looking at the sample values in the task formulation}, but still reasonable with a high dilution of the glycerine. An error of $\unit[8.9]{\%}$ is okay, when taking into account, that there are lots of sources for errors.\\
+The Reynolds number using formula \ref{eq:reynold} is $\text{Re} \approx 75.8$. This number is far above 1, so the flow might not be completely laminar. But the calculated values should still be a good approximation because our object is very small and streamlined, so if there is a non-laminar flow, it should have a very little weight to the final result.
+
+
+
+
+

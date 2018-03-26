@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Ergebnisse.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Methoden.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Versuch1.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Vorgehen.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Aufgaben.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="true" line="0" master="true" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Auswertung.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Diskussion.tex" bookmark1="0"/>
-    <document bookmark2="0" hasfocus="false" line="0" master="false" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Einleitung.tex" bookmark1="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Aufgaben.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Diskussion.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Vorgehen.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Versuch3.tex" master="false" hasfocus="true" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Versuch1.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="6" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Ergebnisse.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="11" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Methoden.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Einleitung.tex" master="false" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Auswertung.tex" master="true" hasfocus="false" bookmark2="0"/>
+    <document bookmark1="0" line="58" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\VIS\Versuch2.tex" master="false" hasfocus="false" bookmark2="0"/>
 </TexmakerSession>

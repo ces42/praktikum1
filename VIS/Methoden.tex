@@ -2,31 +2,37 @@
 
 The viscosity $\eta$ can be defined via the following experimental setup: We have two infinitely large plates, the lower one is stationary and the upper one is moving with speed $v$.
 
-The viscosity can be defined using the following formula
-\[
+The viscosity can be defined using the following formula:
+\begin{equation}
     \eta = \frac{F b}{A v} \label{eq:vis}
-\]
+\end{equation}
 Where $b$ is the distance between the two plates and $F/A$ is the force per Area resulting from "friction".
 
-In case of a Newtonian liquid (viscosity is independent of speed) and laminar flow  we can derive the \emph{Hagen-Poiseuille-Law} 
-\[
+In case of a Newtonian liquid (viscosity is independent of speed) and laminar flow  we can derive the \emph{Hagen-Poiseuille-Law} :
+\begin{equation}
     i = \frac{\pi r^4 \Delta p}{8 \eta \ell} \label{eq:hp}
-\]
+\end{equation}
 which describes the flow $i$ through a cylindrical pipe of radius $r$ and length $l$, when there is a pressure difference $\Delta p$ along it.
 
-Another Phenomenon involving viscosity is \emph{Stokes' drag}. This phenomenon occurs when a sphere of radius $r$ falls with speed $v$ through a liquid flowing around it in laminar fashion. The drag on the sphere is given by
-\[
+Another Phenomenon involving viscosity is \emph{Stokes' drag}. This phenomenon occurs when a sphere of radius $r$ falls with speed $v$ through a liquid flowing around it in laminar fashion. The drag on the sphere is given by:
+\begin{equation}
     F = 6 \pi \eta r v \label{eq:stokes}
-\]
-If we assume that the sphere is falling with terminal velocity, i.\,e. there is an equilibrium of the drag, the buoyancy and the gravitational Force exerted on the sphere, we get
-\[
+\end{equation}
+If we assume that the sphere is falling with terminal velocity, i.\,e. there is an equilibrium of the drag, the buoyancy and the gravitational Force exerted on the sphere, we get:
+\begin{equation}
     \eta = \frac{2 r^2 g}{9 v}(\rho_\mathrm{sphere} - \rho_\mathrm{fl}) \label{eq:termid}
-\]
+\end{equation}
 However this equation only holds in the Limit $r \to 0$. 
-If we assume that the sphere is falling through a cylinder of radius $R$ and not near the caps we get the corrected formula
-\[
+If we assume that the sphere is falling through a cylinder of radius $R$ and not near the caps we get the corrected formula:
+\begin{equation}
     \eta = \frac{2 r^2 g}{9 v \left( 1 + 2.4 \frac{r}{R} \right)}(\rho_\mathrm{sphere} - \rho_\mathrm{fl}) \label{eq:term}
-\]
+\end{equation}
+These formulas are only valid for laminar flows. The \emph{Reynolds number} helps to determine whether the flow is laminar or not. The Reynolds number can be calculated with:
+\begin{equation}
+\text{Re} = \frac{2r\cdot \rho_ {fl} \cdot v_{avg}}{\eta}
+\label{eq:reynold}
+\end{equation}
+In long tubes the number must be below 1150 to be sure, the flow is laminar. When there is an obstacle in the tube, the number must be below 1.
 
 
 
