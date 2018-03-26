@@ -8,9 +8,10 @@ The pressure of the water can be calculated with:
 p = \rho \cdot h \cdot g
 \end{equation}
 where $V$ is the Volume and $t$ the time.\\
-The density of water is $\rho = \unit[997.6]{kg/m^3}$ at a temperature of $T = 22.9 \C$.\footnote{Source: Wolfram-Alpha}\\
-For the height, we assume an error of $\unit[4]{mm}$ because the level of the water was hard to see through the plastic, the error of the time should be about $\unit[1]{sek}$, the temperature error is at $\unit[0.2]{\C}$, which leads to an error of the density with $\Delta \rho = \pm \unit[0.1]{kg/m^3}$. The error of the mass is approximately $\unit[0.002]{g}$ (measuring the empty cylinder before and after the experiment). $\Delta p$ is therefore equals $\unit[0.041]{kPa}$ (at the max. height).
-The error for the strength of the flow adds up to $\unit[1.74\e{-3}]{cm^3/s}$.\\As the task formulation tells us, there are some more sources of errors, like physical effects, which will be included in the linear regression.
+The density of water is $\rho = \unit[997.6]{kg/m^3}$ at a temperature of $T = 22.9 \C$.%
+\footnote{\url{https://www.wolframalpha.com/input/?i=density+of+water+at+22.9+celsius}}\\
+For the height, we assume an error of $\unit[4]{mm}$ because the level of the water was hard to see through the plastic. The error of the time should be about $\unit[1]{s}$, the temperature error is at $\unit[0.2]{\C}$, which leads to an error of the density with $\Delta \rho = \pm \unit[0.1]{kg/m^3}$. The error of the mass is approximately $\unit[0.002]{g}$ (measuring the empty cylinder before and after the experiment). $\Delta p$ is therefore equal to $\unit[0.041]{kPa}$ (at the max. height).
+The error for the strength of the flow adds up to $\unit[1.74\e{-3}]{cm^3/s}$.\\As the task formulation tells us, there are some more sources of errors, e.\,g. physical effects, which will be included in the linear regression.
 
 \begin{figure}
 \begin{center}
