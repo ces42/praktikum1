@@ -10,9 +10,15 @@ Where $b$ is the distance between the two plates and $F/A$ is the force per Area
 
 In case of a Newtonian liquid (viscosity is independent of speed) and laminar flow  we can derive the \emph{Hagen-Poiseuille-Law} :
 \begin{equation}
-    i = \frac{\pi r^4 \Delta p}{8 \eta \ell} \label{eq:hp}
+   \Delta i = \frac{\pi r^4 \Delta p}{8 \eta \ell} \label{eq:hp}
 \end{equation}
-which describes the flow $i$ through a cylindrical pipe of radius $r$ and length $l$, when there is a pressure difference $\Delta p$ along it.
+which describes the flow $i$ through a cylindrical pipe of radius $r$ and length $l$, when there is a pressure difference $\Delta p$ along it.\\
+The formula can be rearranged to:
+\begin{equation}
+\Delta p = W \cdot i \text{ with } W = \frac{8\eta l}{\pi r^4}
+\label{eq:pressure}
+\end{equation}
+
 
 Another Phenomenon involving viscosity is \emph{Stokes' drag}. This phenomenon occurs when a sphere of radius $r$ falls with speed $v$ through a liquid flowing around it in laminar fashion. The drag on the sphere is given by:
 \begin{equation}

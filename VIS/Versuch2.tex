@@ -1,4 +1,4 @@
-\subsection{Falling Sphere Viscometer}
+\subsection{Falling Sphere Viscometer} \label{sec:aufgabe2}
 In this experiment, the temperature has the value of $22.5\C$. To determine the viscosity $\eta$ we need to know the mass of the bowls $m$, the radius of the bowls $r$, the length of the tube $\ell$ in which we measure the time that the bowl needs falling $t$, the radius of the tube $R$ and the density of the fluid $\rho_{fl}$. For these Values, we get the following values with the systematic (first term) and the statistic (second term) errors:
 \begin{align*}
 m &= \unit[(166.05\e{-3} \pm 0.05\e{-3} \pm 0.02 \e{-3})]{g}\\
@@ -25,6 +25,7 @@ The partial derivations of formula \ref{eq:termid} (dependent on the mass of the
 We get for the systematic error:
 
 \begin{equation}
+\Delta\eta_1 = 
 \abs{\left(\Delta l\frac{\partial \eta}{\partial l}\right)}
 +
 \abs{\left(\Delta r\frac{\partial \eta}{\partial r}\right)}
@@ -44,8 +45,8 @@ Together with the statistical errors, we get the final error with:
 \Delta t_{stat} \cdot \Delta t\frac{\partial \eta}{\partial t}
 \right)^2 +
 \left(
-\Delta m_{stat} \cdot \Delta t\frac{\partial \eta}{\partial m}^2
-\right)}
+\Delta m_{stat} \cdot \Delta t\frac{\partial \eta}{\partial m}
+\right)^2}
 \approx \unit[5.42]{mPa s}
 \end{equation}
 
