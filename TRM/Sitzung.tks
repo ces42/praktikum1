@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
+    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\kleineScheibe.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Figur1.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Methoden.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Figur2.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Vorgehen.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Puppe.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Aufgaben.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
-    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Ausarbeitung.tex" line="0" bookmark1="0" master="true" hasfocus="true"/>
+    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Ausarbeitung.tex" line="0" bookmark1="0" master="true" hasfocus="false"/>
+    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\großeScheibe.tex" line="0" bookmark1="0" master="false" hasfocus="true"/>
     <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Diskussion.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
-    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Ergebnisse.tex" line="0" bookmark1="0" master="false" hasfocus="false"/>
+    <document bookmark2="0" bookmark3="0" file="C:\Users\Kilian\OneDrive - tum.de\Studium\Physik\Praktika\Praktikum Teil 1\Git\TRM\Ergebnisse.tex" line="3" bookmark1="0" master="false" hasfocus="false"/>
 </TexmakerSession>
