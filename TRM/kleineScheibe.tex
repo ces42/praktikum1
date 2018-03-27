@@ -1,2 +1,24 @@
 \subsubsection{Kalibrierung der kleinen Scheibe}
-Für die kleine Drehscheibe wurde
+Für die kleine Drehscheibe wurde alle $unit[45]{^\circ}$ die resultierende Kraft bei einem Radius $r = \unit[(18.8 \pm 0.3)]{cm}$ gemessen (siehe Abbildung \ref{fig:kal1}). Mit linearer Regression\footnote{Berechnung durch Origin} bekommen wir eine Steigung von $W = \unit[(2.219 \pm 0.010]{mN/^\circ}$.\\
+Zudem kann die Winkelrichtgröße durch die Steigung ermittelt werden. Durch Formel \ref{eq:wink}:
+\begin{equation}
+T^2 = \frac{4\pi^2}{d}\cdot (J_0+J_Z)
+\end{equation}
+Der y-Achsenabschnitt $f = \unit[(0.57 \pm 0.06)]{s^2}$ ergibt sich durch die Regression, und somit ist $J_0$
+\begin{align}
+J_0 &= f^2\frac{d}{4\pi^2}\\
+J_0 &= \unit[18376]{g cm^2}
+\end{align}
+Somit können wir $d$ berechnen:
+\begin{equation*}
+d = \frac{4\pi^2}{W} = \unit[(2233 \pm  )]{g cm^2/T^2}
+\end{equation*}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Bilder/kal1.eps}
+\caption{Kalibrierung der kleinen Scheibe}
+\label{fig:kal1}
+\end{center}
+\end{figure}
