@@ -6,8 +6,9 @@ mg = 6 \cdot \pi \cdot \eta \cdot r \cdot v
 \end{equation*}
 So for the viscosity we get:
 \begin{equation}
-\eta = \frac{mg}{6 \cdot \pi \cdot r \cdot v} \approx \unit[0.83]{Pa s}
+\eta = \frac{mg}{6 \cdot \pi \cdot r \cdot v} \approx \frac{\unit[80]{kg}\cdot \unit[9.81]{m/s^2}}{6 \cdot \pi \cdot \unit[0.9]{m} \cdot \frac{\unit[200]{km/h}}{3.6}} = \unit[0.83]{Pa s}
 \end{equation}
+This value is far too big, comparing with the given value of $\eta = \unit[0.0182]{mPa s}$. The Reynolds number is about $\text{Re} = 78$, so the flow is presumably not laminar (humans are not very streamlined), so Stoke's formula is not correct anymore. Additionally the air gets compressed underneath the human, which also leads to an additional error. Also Stoke's formula is normally used for bowls, so the approximation to a bowl with radius $r = \unit[0.9]{m}$ might not be very good.
 
 \subsection{Reynolds Number When Breathing}
 The Reynolds number at constant speed while breathing is calculated by:
