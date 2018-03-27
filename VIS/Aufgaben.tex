@@ -1,5 +1,18 @@
 \section{Additional Tasks}
 \subsection{Viscosity Of Air}
-
+The upward trend can be neglected in this task, since the speed is only an approximation and the upward trend makes about $0.1\%$ difference for the viscosity. So it is suitable to use the Stokes friction:
+\begin{equation*}
+mg = 6 \cdot \pi \cdot \eta \cdot r \cdot v
+\end{equation*}
+So for the viscosity we get:
+\begin{equation}
+\eta = \frac{mg}{6 \cdot \pi \cdot r \cdot v} \approx \unit[0.83]{Pa s}
+\end{equation}
 
 \subsection{Reynolds Number When Breathing}
+The Reynolds number at constant speed while breathing is calculated by:
+\begin{equation}
+\text{Re} = \frac{2r \rho_{air} \cdot v}{\eta}
+\end{equation}
+We approximate the radius of a hole in the nose wit $\unit[5]{mm}$. The average speed of air inside this hole is $v = \frac{V}{t} \approx \frac{\unit[1]{L} \cdot 15}{\unit[60]{s}} = \unit[0.025]{L/s} = \unit[25\e{-6}]{m^3/s} \approx \unit[0.16]{m/s}$. The Reynolds number is therefore $\text{Re} = 113.4$ with the given viscosity $\eta = \unit[0.0182]{mPa s}$ and the given density of $\rho_{air} = \unit[1.29]{kg/m^3}$.\\
+To get non-laminar flows, the Reynolds number has to be at last $>1160$, so humans would have to breathe about $10-20$ times faster, which we do not think is possible.
