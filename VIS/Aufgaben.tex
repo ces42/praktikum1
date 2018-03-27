@@ -8,7 +8,7 @@ So for the viscosity we get:
 \begin{equation}
 \eta = \frac{mg}{6 \cdot \pi \cdot r \cdot v} \approx \frac{\unit[80]{kg}\cdot \unit[9.81]{m/s^2}}{6 \cdot \pi \cdot \unit[0.9]{m} \cdot \frac{\unit[200]{km/h}}{3.6}} = \unit[0.83]{Pa s}
 \end{equation}
-This value is far too big, comparing with the given value of $\eta = \unit[0.0182]{mPa s}$. The Reynolds number is about $\text{Re} = 78$, so the flow is presumably not laminar (humans are not very streamlined), so Stoke's formula is not correct anymore. Additionally the air gets compressed underneath the human, which also leads to an additional error. Also Stoke's formula is normally used for bowls, so the approximation to a bowl with radius $r = \unit[0.9]{m}$ might not be very good. Most importantly, Stoke's formula is used for fluids, not for gases. In gases the friction depends on the speed squared.
+This value is far too big, comparing with the given value of $\eta = \unit[0.0182]{mPa s}$. The Reynolds number is about $\text{Re} = 78$ (using the radius as characteristic length), so the flow is presumably not laminar (humans are not very streamlined), so Stoke's formula is not correct anymore. Additionally the air gets compressed underneath the human, which leads to an additional error. Also Stoke's formula is normally used for bowls, so the approximation to a bowl with radius $r = \unit[0.9]{m}$ might not be very good. Most importantly, Stoke's formula is used for fluids, not for gases. In gases the friction depends on the speed squared.
 
 
 
@@ -17,5 +17,5 @@ The Reynolds number at constant speed while breathing is calculated by:
 \begin{equation}
 \text{Re} = \frac{2r \rho_{air} \cdot v}{\eta}
 \end{equation}
-We approximate the radius of a hole in the nose wit $\unit[5]{mm}$. The average speed of air inside this hole is $v = \frac{V}{t} \approx \frac{\unit[1]{L} \cdot 15}{\unit[60]{s}} = \unit[0.025]{L/s} = \unit[25\e{-6}]{m^3/s} \approx \unit[0.16]{m/s}$. The Reynolds number is therefore $\text{Re} = 113.4$ with the given viscosity $\eta = \unit[0.0182]{mPa s}$ and the given density of $\rho_{air} = \unit[1.29]{kg/m^3}$.\\
+We approximate the radius of a hole in the nose with $\unit[5]{mm}$. The average speed of air inside this hole is $v = \frac{V}{t} \approx \frac{\unit[1]{L} \cdot 15}{\unit[60]{s}} = \unit[0.025]{L/s} = \unit[25\e{-6}]{m^3/s} \approx \unit[0.16]{m/s}$. The Reynolds number is therefore $\text{Re} = 113.4$ with the given viscosity $\eta = \unit[0.0182]{mPa s}$ and the given density of $\rho_{air} = \unit[1.29]{kg/m^3}$.\\
 To get non-laminar flows, the Reynolds number has to be at last $>1160$, so humans would have to breathe about $10-20$ times faster, which we do not think is possible.
