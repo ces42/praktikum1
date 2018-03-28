@@ -1,0 +1,47 @@
+\section{Verwendete Methoden}
+\subsection{Trägheitsmomente}
+In diesem Versuch geht es vorwiegend um die Bestimmung von Trägheitsmomenten. Der Trägheitsmoment eines Massepunktes $m$ mit Abstand $r$ von der Rotationsachse ist definiert als:
+\begin{equation}
+J_{\omega} = m \cdot r^2
+\end{equation}
+Um einen Körper in Rotation zu versetzen (um den Drehimpuls $\vv{L}$ zu ändern) ist ein Drehmoment nötig, welches sich durch die Kraft $\vv{F}$ senkrecht auf den Hebelarm wirkt und lässt sich folgendermaßen definieren:
+\begin{equation}
+\vv{M} = \vv{r} \times \vv{F} = \frac{d\vv{L}}{dt}
+\end{equation}
+Das Trägheitsmoment eines ausgedehnten Körpers lässt sich durch die Summierung aller Massepunkte (mithilfe eines Integrals) definieren:
+\begin{equation}
+\sum_i m_i r_i^2
+\label{eq:traeg}
+\end{equation}
+\subsection{Der Satz von Steiner}
+Verläuft die Drehachse nicht durch den Schwerpunkt (dieses Trägheitsmoment ist für viele Körper bekannt), so kann das Trägheitsmoment durch den Satz von Steiner entsprechend berechnet werden:
+\begin{equation}
+J_A = J_S + m \cdot r_a^2
+\end{equation}
+Wobei $J_A$ das gesuchte Trägheitsmoment ist $J_S$ das Trägheitsmoment durch den Schwerpunkt und $R_a$ der Abstand zur Drehachse. Zu beachten ist hierbei, dass die Drehachsen parallel zueinander sind.
+
+\subsection{Harmonische Schwingungen}
+Ähnlich wie für translatorische Schwingungen, gilt für die Winkelrichtgröße $D$ und den Auslenkungswinkel $\vv{\varphi}$ folgender Zusammenhang:
+\begin{equation*}
+\vv{M} = -D \cdot \vv{\varphi}
+\end{equation*}
+Für die Schwingungsdauer ergibt sich also:
+\begin{equation}
+T = 2\pi \cdot \sqrt{\frac{J_{\omega}}{D}}
+\label{eq:wink}
+\end{equation}
+
+\subsection{Extrapolation}
+Mithilfe von Extrapolation kann der Trägheitsmoment von einer Puppe auf den eines Menschen (näherungsweise) extrapoliert werden. Mit der Annahme, dass die Radien von Mensch und Puppe genau im Verhältnis der Längen der Puppe und dem Menschen sind, ergibt sich über die Formel \ref{eq:traeg} unter der Annahme einer homogenen Dichteverteilung:
+\begin{equation}
+J_{Men} = \frac{\rho_{Men}}{\rho_{Puppe}} \cdot \left(\frac{L}{l}\right)^5 \cdot J_{Puppe}
+\end{equation}
+wobei $l$ die Länge für die Puppe und $L$ die Länge für den Menschen ist.
+
+
+
+
+
+
+
+
