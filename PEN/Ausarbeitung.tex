@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{pgf,tikz}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usepackage{epstopdf}
+\usepackage{units}
+\usepackage{microtype}
+\usepackage{esvect}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\setlength{\parindent}{0pt}
+
+\title{Pendel (PEN)}
+\author{Kilian Brenner und Carlos Esparza \\ Team 13, Group 6}
+
+\date{2.04.2018}
+
+
+\pgfplotsset{compat=newest,
+    tick label style={font=\small},
+    label style={font=\small},
+    legend style={font=\footnotesize}
+}
+
+%\tikzset{every mark/.append style={scale=0.3}}
+\newlength{\plotheight}
+\newlength{\plotwidth}
+\newlength{\imgheight}
+\setlength{\plotwidth}{\textwidth}
+\setlength{\plotheight}{11cm}
+
+\newcommand{\e}[1]{\cdot\!10^{#1}}
+\renewcommand{\emph}{\textbf}
+\newcommand{\C}{\unit{\, ^\circ C}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\usepackage{mathtools}
+%\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+In diesem Versuch werden die Eigenschaften von verschiedenen Pendeln untersucht. Außerdem erhalten wir eine Methode um die lokale Erdbeschleunigung $g$ experimentell zu bestimmen. 
+
+\input{Methoden.tex}
+
+\input{Vorgehen.tex}
+
+\input{Ergebnisse.tex}
+
+\input{Diskussion.tex}
+
+\input{Aufgaben.tex}
+
+%\begin{appendix}
+%\addcontentsline{toc}{section}{Anhang}
+%\input{Fehlerrechung.tex}
+%\end{appendix}
+
+
+\end{document}
