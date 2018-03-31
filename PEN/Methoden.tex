@@ -1,3 +1,26 @@
 \section{Verwendete Methoden}
 \subsection{Das physikalische Pendel}
-Anders als in einem mathematischen Pendel, in dem ein Massepunkt $m'$ an einem masselosen Faden der Länge $l'$ hängt, wird im physikalischen Pendel die Volumenausehnung des um eine Drehachse schwingenden Körpers berücksichtigt. Das beschleunigende Drehmoment $M$ wird durch den Winkel $\varphi$
+Anders als in einem mathematischen Pendel, in dem ein Massenpunkt $m'$ an einem masselosen Faden der Länge $l'$ hängt, wird im physikalischen Pendel die Volumenausdehnung des um eine Drehachse schwingenden Körpers berücksichtigt. Das beschleunigende Drehmoment $M$ wird durch den Winkel $\varphi$ und den Abstand $l_\n{1}$ zum Massenmittelpunkt folgendermaßen ausgedrückt:
+
+\begin{equation*}
+M = l \cdot m \cdot g \cdot \sin \varphi
+\end{equation*}
+
+Zusammen mit dem Trägheitsmoment $J$ ergibt sich folgende Gleichung
+
+\begin{equation}
+J \cdot \ddot{\varphi} = - m \cdot g \cdot l_1 \cdot \sin \varphi
+\label{eq:basis}
+\end{equation}
+
+Es ergibt sich also eine harmonische Schwingung mit Schwingungsdauer
+
+\begin{equation}
+T = 2\pi \sqrt{\frac{J}{mgl_1}} = 2\pi \cdot  \sqrt{\frac{1}{g}\left(\frac{J_\n{S}}{ml_1}+l_1\right)}
+\label{eq:period}
+\end{equation}
+
+Wobei die letzte Umformung mithilfe des Satzes von Steiner umgeformt wurde und $J_S$ das Trägheitsmoment durch den Schwerpunkt beschreibt.
+
+\subsection{Das Reversionspendel}
+Möchte man Formel \ref{eq:period} nach $l_1$ umstellen, stellt man fest, dass zwei Lösungen existieren müssen, d.h. es existieren zwei Längen als Abstand vom Schwerpunkt, welche die gleiche Schwingungsdauer haben. Die zweite Länge bezeichnen wir im folgenden als $l_2$
