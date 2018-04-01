@@ -47,20 +47,37 @@ g = 4\pi^2 \cdot \frac{l_\n{r}}{T^2}
 Bei gekoppelten Pendeln werden zwei Pendel mit einer Feder (Federkonstante $d$) verbunden. Im folgenden Werden beide Pendel als gleich (gleiche Schwingungsdauer $T$ und gleiches Trägheitsmoment $J$) angenommen. $\Psi_1$ und $\Psi_2$ beschreiben im folgenden die Auslenkung des ersten bzw. des zweiten Pendels aus der neu entstehenden Ruhelage mit der Feder. Als Vereinfachung ist im Folgenden $D = m \cdot g \cdot l$. Das Drehmoment, welches nun auf die Pendel wirkt, ist folgendes:
 
 \begin{align*}
-M_1 &= -D \cdot \psi_1 - dr^2(\Psi_2 - \Psi_1)\\
-M_2 &= -D \cdot \psi_2 - dr^2(\Psi_2 - \Psi_1)\\
+M_1 &= -D \cdot \psi_1 - d \cdot r^2(\Psi_2 - \Psi_1)   \label{eq:drehmoment1} \\
+M_2 &= -D \cdot \psi_2 - d \cdot r^2(\Psi_2 - \Psi_1)   \label{eq:drehmoment2}
 \end{align*}
 
 Mit den Abkürzungen $k^2 := \frac{dr^2}{J}$ sowie $w_{gl}^2 := \frac{D}{l}$ sowie den Substitutionen $X := \Psi_1 + \Psi_2$ und $Y := \Psi_1 - \Psi_2$.
 
 \begin{align}
-X(t) &= A_1 \cdot \sin (\omega_{\n{gl}}t) + A_2 \cdot \cos (\omega_{\n{gl}}t)\\
-Y(t) &= A_3 \cdot \sin (\omega_{\n{geg}}t) + A_4 \cdot \cos (\omega_{\n{geg}}t)
+X(t) &= A_1 \cdot \sin (\omega_{\n{gl}}t) + A_2 \cdot \cos (\omega_{\n{gl}}t)		\label{eq:subst1} \\
+Y(t) &= A_3 \cdot \sin (\omega_{\n{geg}}t) + A_4 \cdot \cos (\omega_{\n{geg}}t) 	\label{eq:subst2}
 \end{align}
 
-Für die Schwingungsfrequenz $\omega_{\n{gl}}$ bei der die Pendel in Phase schwingen, gilt
+Für die Schwingungsfrequenz $\omega_{\n{gl}}$ bei der die Pendel in Phase schwingen, können diese beiden Therme benutzt werden, um die Schwingung darzustellen. Mithilfe von Additionstheoremen kann nach $\Psi(t)$ umgestellt werden
 
+\begin{align}
+\Psi_1 (t) &= 2A \cdot \sin (\omega_\n{M} \cdot t) \cdot \cos (\omega_\n{S} \cdot t)	\label{eq:psi1} \\
+\Psi_2 (t) &= 2A \cdot \cos (\omega_\n{M} \cdot t) \cdot \sin (\omega_\n{S} \cdot t)	\label{eq:psi2}
+\end{align}
 
+wobei
+
+\begin{align}
+\omega_\n{M} &= \frac{\omega_\n{gl} + \omega_\n{geg}}{2}	\label{eq:avg} \\
+\omega_\n{S} &= \frac{\omega_\n{geg} - \omega_\n{gl}}{2}	\label{eq:schwebung}
+\end{align}
+
+wobei $\omega_\n{M}$ die mittlere Kreisfrequenz und $\omega_\n{S}$ die Schwebungskreisfrequenz ist.\\
+Zudem wird der Kopplungsgrad $K$ definiert:
+
+\begin{equation}
+K = \frac{\omega_\n{geg}^2 - \omega_\n{gl}^2}{\omega_\n{gl}^2 + \omega_\n{geg}^2} = \frac{d \cdot r^2}{D + d \cdot r^2}	\label{eq:kopplung}
+\end{equation}
 
 
 
