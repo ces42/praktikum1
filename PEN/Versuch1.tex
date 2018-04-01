@@ -1,10 +1,13 @@
 \section{Reversionspendel}
 
+Die ausführliche Analyse dieses Versuchs (einschl. Rohdaten, fit-Funktionen, etc) findet sich unter \url{https://github.com/ces42/praktikum1/blob/master/PEN/Daten/Auswertung1.ipynb}.
+\\
+
 \begin{figure}    
     \begin{tikzpicture}
     \begin{axis}[
     height=\plotheight, width=\plotwidth,
-    xlabel={Vertiefung}, ylabel={Periode $T$ in $\unit{s}$},
+    xlabel={Vertiefung $x$}, ylabel={Periode $T$ in $\unit{s}$},
     only marks,
     % xtick={2, 3, 4, 5, 6, 7},
     xmin=-.1, xmax=26.1,
@@ -13,10 +16,10 @@
     ]
     % \addplot[error bars/.cd, y dir=both, y explicit]
     \addplot+ [color=blue, mark=o, error bars/.cd, y dir=both, y explicit] table [x=n, y=T1, y error=err_T1, col sep=comma] {./Daten/werte1.csv};
-    \addplot[domain=0.5:25.5, color=blue, smooth, thick, mark size=0] {sqrt( (-160.467 + -0.0852662*(x - 31.9451)^2) / (x - 31.9451 - 42.3232) )};
+    \addplot[domain=0.5:25.5, color=blue, smooth, thick, mark size=0] {sqrt( (-159.08 + -0.0840740*(x - 32.2092)^2) / (x - 32.2092 + -41.7226) )};
     
     \addplot+ [color=red, mark=square, error bars/.cd, y dir=both, y explicit] table [x=n, y=T2, y error=err_T2, col sep=comma] {./Daten/werte1.csv};
-    \addplot[domain=0.82:25.5, color=red, smooth, thick, mark size=0] {sqrt( (18.8601 + 0.1043495*(x - -2.45269)^2) / (x - -2.45269 - -0.522567) )};
+    \addplot[domain=0.82:25.5, color=red, smooth, thick, mark size=0] {sqrt( (18.8601 + 0.1043495*(x - -2.45269)^2) / (x - -2.45269 + 0.522567) )};
     
     \end{axis}
     \end{tikzpicture}
@@ -24,9 +27,16 @@
     \label{diag:rev}
 \end{figure}
 
-Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für einen bestimmen Aufhängepunkt ergeben sich diese als
+Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für einen bestimmen Aufhängepunkt ergeben sich diese mit dem Satz von Steiner und Gleichung~\ref{eq:period} als
 \[
-    T = 2 \pi \sqrt{\frac{J_0 + J_1 + m s^2}{m_0 g \ell_0 + m g s}}
+    T = 2 \pi \sqrt{\frac{J_0 + J_1 + m_1 s^2}{m_0 g \ell_0 + m_1 g s}}
 \]
-wobei 
+Dabei ist $J_0$ das Drehmoment und $m_0$ die Masse des Stabs und des fixen Gewichts um den Aufhängepunkt, $J_1$ und $m_1$ Eigendrehmoment bzw. Masse des verschiebbaren Gewichts und $s$ der Abstand des Schwerpunkt des verschiebbaren Gewichts vom Aufhängepunkt. Das heißt unsere Messwerte müssen einem Zusammenhang der Form
+\[
+    T^2 = \frac{a + b (x - x_0)^2}{c + (x - x_0)}
+\]
+folgen. Mit einer Fit-routine%
+\footnote{\texttt{scipy.optimize.curve\_fit}, Methode \texttt{'lm'} mit Gewichtung}
+lassen sich für beide Aufhängepunkte solche Werte bestimmen. Dabei muss man beachten, dass die Startparameter bzw. ihre Differenzen bereits die richtigen Vorzeichen haben sollten, da der Parameterraum durch die Singularitäten der fit-Funktion in mehrere Teile geteilt wird und eine fit-routine in der Regel nicht zwischen diesen wechseln kann.
 
+Wir erhalten somit für jeden Aufhängepunkt einen Fit mittels eines Parametervektors $\vec{p} = (a, b, c, x_0)$
