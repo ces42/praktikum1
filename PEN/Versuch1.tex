@@ -1,0 +1,32 @@
+\section{Reversionspendel}
+
+\begin{figure}    
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=\plotheight, width=\plotwidth,
+    xlabel={Vertiefung}, ylabel={Periode $T$ in $\unit{s}$},
+    only marks,
+    % xtick={2, 3, 4, 5, 6, 7},
+    xmin=-.1, xmax=26.1,
+    ymax=2.32,
+    legend entries={Rotation um erste Achse, Theoriekurve, Rotation um zweite Achse, Theoriekurve}, legend pos=north east
+    ]
+    % \addplot[error bars/.cd, y dir=both, y explicit]
+    \addplot+ [color=blue, mark=o, error bars/.cd, y dir=both, y explicit] table [x=n, y=T1, y error=err_T1, col sep=comma] {./Daten/werte1.csv};
+    \addplot[domain=0.5:25.5, color=blue, smooth, thick, mark size=0] {sqrt( (-160.467 + -0.0852662*(x - 31.9451)^2) / (x - 31.9451 - 42.3232) )};
+    
+    \addplot+ [color=red, mark=square, error bars/.cd, y dir=both, y explicit] table [x=n, y=T2, y error=err_T2, col sep=comma] {./Daten/werte1.csv};
+    \addplot[domain=0.82:25.5, color=red, smooth, thick, mark size=0] {sqrt( (18.8601 + 0.1043495*(x - -2.45269)^2) / (x - -2.45269 - -0.522567) )};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Periode der Schwingung des Reversionspendels in Abhängigkeit der Vertiefung an der das kleine Gewicht eingehängt wurde. Die erste Achse ist weiter entfernt vom fixen Gewicht. Die meisten Punkte repräsentieren eine Messung, Mehrfachmessungen wurden in die Fehlerbalken eingerechnet.}
+    \label{diag:rev}
+\end{figure}
+
+Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für einen bestimmen Aufhängepunkt ergeben sich diese als
+\[
+    T = 2 \pi \sqrt{\frac{J_0 + J_1 + m s^2}{m_0 g \ell_0 + m g s}}
+\]
+wobei 
+
