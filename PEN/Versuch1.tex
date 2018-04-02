@@ -5,37 +5,53 @@
 Die ausführliche Analyse dieses Versuchs (einschl. Rohdaten, fit-Funktionen, etc) findet sich unter \url{https://github.com/ces42/praktikum1/blob/master/PEN/Daten/Auswertung1.ipynb}.
 \\
 
-\begin{figure}    
+\begin{figure}[h] % h weil es mir das auf eine eigenen Seite machen wollte
     \begin{tikzpicture}
     \begin{axis}[
-    height=\plotheight, width=\plotwidth,
+    height=1.0\plotheight, width=\plotwidth,
     xlabel={Vertiefung $x$}, ylabel={Periode $T$ in $\unit{s}$},
     only marks,
     % xtick={2, 3, 4, 5, 6, 7},
     xmin=-.1, xmax=26.1,
-    ymax=2.32,
-    legend entries={Rotation um erste Achse, Theoriekurve, Rotation um zweite Achse, Theoriekurve}, legend pos=north east
+    ymax=2.33, ymin=1.56,
+    legend entries={Rotation um erste Achse, Theoriekurve, Rotation um zweite Achse, Theoriekurve},
+    legend style={at={(0.5,0.97)}, anchor=north},
+    extra x ticks={4.395, 21.513}, extra x tick labels={$x_-$, $x_+$}, extra x tick style={
+        xticklabel style={yshift=-0.4ex, xshift=.7ex, anchor=south}, xticklabel pos=upper
+    },
+    extra y ticks={1.796}, extra y tick labels={$T_\mathrm{r}$}, extra y tick style={
+    %yticklabel style={yshift=-0.4ex, xshift=.7ex, anchor=south},
+    yticklabel pos=right
+    }
     ]
     % \addplot[error bars/.cd, y dir=both, y explicit]
     \addplot+ [color=blue, mark=o, error bars/.cd, y dir=both, y explicit] table [x=n, y=T1, y error=err_T1, col sep=comma] {./Daten/werte1.csv};
-    \addplot[domain=0.5:25.5, color=blue, smooth, thick, mark size=0] {sqrt( (-159.08 + -0.0840740*(x - 32.2092)^2) / (x - 32.2092 + -41.7226) )};
+    \addplot[domain=0.5:25.5, color=blue, smooth, thick, mark size=0] {sqrt( (-160.47 + -0.08527*(x - 31.94)^2) / (x - 31.94 + -42.32) )};
     
     \addplot+ [color=red, mark=square, error bars/.cd, y dir=both, y explicit] table [x=n, y=T2, y error=err_T2, col sep=comma] {./Daten/werte1.csv};
-    \addplot[domain=0.82:25.5, color=red, smooth, thick, mark size=0] {sqrt( (18.8601 + 0.1043495*(x - -2.45269)^2) / (x - -2.45269 + 0.522567) )};
+    \addplot[domain=0.82:25.5, color=red, smooth, thick, mark size=0] {sqrt( (18.860 + 0.10435*(x - -2.45269)^2) / (x - -2.45269 + 0.52257) )};
+    
+    \draw[black, dashed](axis cs:4.3884,2.320)--(axis cs:4.3884,1.795);
+    \draw[black, dashed](axis cs:21.5359,2.320)--(axis cs:21.5359,1.794);
+    
+    
+    \draw[black, dashed](axis cs:4.388,1.796)--(axis cs:26.1,1.796);
     
     \end{axis}
     \end{tikzpicture}
-    \caption{Periode der Schwingung des Reversionspendels in Abhängigkeit der Vertiefung an der das kleine Gewicht eingehängt wurde. Die erste Achse ist weiter entfernt vom fixen Gewicht. Die meisten Punkte repräsentieren eine Messung, Mehrfachmessungen wurden in die Fehlerbalken eingerechnet.}
+    \caption{Periode der Schwingung des Reversionspendels in Abhängigkeit der Vertiefung an der das kleine Gewicht eingehängt wurde. Die "`erste"' Achse ist weiter entfernt vom fixen Gewicht. Die meisten Punkte repräsentieren eine Messung, Mehrfachmessungen wurden in die Fehlerbalken eingerechnet. Die dargestellten Fehler sind statistisch.}
     \label{diag:rev}
 \end{figure}
 \noindent
-Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für einen bestimmen Aufhängepunkt ergeben sich diese mit dem Satz von Steiner und Gleichung~\ref{eq:period} als
+Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für die Abschätzung des Fehlers wurde bei manchen Aufhängepunkten mehrfach gemessen. Unter der Annahmen, dass der relative Fehler bei allen Messungen gleich ist lässt sich damit die Standardabweichung von jedem Messpunkt schätzen.
+
+Für einen bestimmen Aufhängepunkt ergeben sich diese mit dem Satz von Steiner und Gleichung~\ref{eq:period} als
 \[
     T = 2 \pi \sqrt{\frac{J_0 + J_1 + m_1 s^2}{m_0 g \ell_0 + m_1 g s}}
 \]
 Dabei ist $J_0$ das Drehmoment und $m_0$ die Masse des Stabs und des fixen Gewichts um den Aufhängepunkt, $J_1$ und $m_1$ Eigendrehmoment bzw. Masse des verschiebbaren Gewichts und $s$ der Abstand des Schwerpunkt des verschiebbaren Gewichts vom Aufhängepunkt. Das heißt unsere Messwerte müssen einem Zusammenhang der Form
 \[
-    T^2 = \frac{a + b (x - x_0)^2}{c + (x - \xi)}
+    y = T^2 = \frac{a + b (x - x_0)^2}{c + (x - \xi)}
 \]
 folgen. Mit einer Fit-routine%
 \footnote{\texttt{scipy.optimize.curve\_fit}, Methode \texttt{'lm'} mit Gewichtung}
@@ -77,8 +93,19 @@ Dabei ist mit $y_0$ der echte und mit $y = y_0 + \d y$ der gemessene Wert gemein
             &= r_i \Sigma^{(1)}_{i j} r_j + s_i \Sigma^{(2)}_{i j} s_j
 \end{align*}
 %
-Dabei nehmen wir an, dass $\d \vec{p}^{(1)}$ und $\d \vec{p}^{(2)}$ unkorreliert sind, da sie aus unabhängigen Messungen berechnet wurden (wir betrachten momentan nur statistische Fehler). $\Sigma^{(k)}_{i j}$ sind die entsprechenden Kovarianzmatrizen, die von der Fit-Funktion geliefert werden. 
+Dabei nehmen wir an, dass $\d \vec{p}^{(1)}$ und $\d \vec{p}^{(2)}$ unkorreliert sind, da sie aus unabhängigen Messungen berechnet wurden (wir betrachten momentan nur statistische Fehler). $\Sigma^{(k)}_{i j}$ sind die entsprechenden Kovarianzmatrizen, die von der Fit-Funktion geliefert werden. Die numerischen Werte der Nullstellen der Fit-Funktion werden numerische berechnet (Newton-Verfahren)
 
-
+Somit erhalten wir bei $x_- \approx 4.395$ den Wert $y_- = \unit[(3.2228 \pm 0.0018)]{s^2}$ und bei $x_+ \approx 21.513$ den Wert $y_+ = \unit[(3.217 \pm 0.004)]{s^2}$. Unter Beachtung der ihrer Korrelation%
+\footnote{\textsc{Avery, Paul}. Combining measurements with correlated errors. \textit{CLEO Note CBX} (1996). S. 95-55.}
+kombinieren wir diese Werte zu $y = {T_\mathrm{rev}}^2 = \unit[(3.2219 \pm 0.0016)]{s}$.
+Nach Gleichung~\ref{eq:gravity} ergibt sich mit $\l_\mathrm{r} = \unit[(80.00 \pm 0.05)]{cm}$
+\[
+    g = \unit[(9.803 \pm 0.008)]{cm}
+\]
+Der Fehler berechnet sich dabei gemäß Gauß'scher Fehlerfortpflanzung aus den statistischen Fehlern von $\l_\mathrm{r}$ und $y$, einer möglichen Schräglage von bis zu $1^\circ$ sowie einem systematischen Fehler in $T$, der auf $\Delta_\mathrm{syst} T \approx \unit[0.25]{ms}$ geschätzt wird. Den Beitrag von letzterem rechnen wir ad-hoc einfach als $g \cdot 2 \Delta_\mathrm{syst} T / \unit[1.75]{s}$ ein%
+\footnote{Er hat sowieso nur einen kleinen Einfluss auf den Gesamtfehler}%
+. Dieser Wert für $g$ stimmt im Rahmen des Fehlers gut mit dem Literaturwert%
+\footnote{\textsc{Schwartz, Roman}, und \textsc{Lindau, Andreas}. \textit{Das europäische Gravitationszonenkonzept nach WELMEC für eichpflichtige Waagen}. Physikalisch-Technische Bundesanstalt, Braunschweig (2003).}
+für München von $\unit[9.89723]{m\,s^{-2}}$ überein.
 %Die $x$-Koordinaten der Schnittpunkte sind die Nullstellen von $f(x, \vec{p}_1, \vec{p}_2) = y(x; \vec{p}_1) - y(x; \vec{p}_2)$ und wir sind interessiert am Wert $y()$
 
