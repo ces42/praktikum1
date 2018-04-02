@@ -22,24 +22,24 @@ Durch Ermittlung der Schwingungsfrequenz der Phase und der Gegenphase, kann mith
 %\end{tabular} 
 \def\arraystretch{1.2}
 \begin{tabular}{ccccc}
-    Loch bei & $T_\mathrm{gl}/2$ & $T_\mathrm{geg}/2$ & $\omega_\n{S}$ berechnet & $\omega_\n{S}$ experimentell\\[0mm]
+    Loch bei & $T_\mathrm{gl}/2$ & $T_\mathrm{geg}/2$ & $\omega_\n{S}$ berechnet & $\omega_\n{S}$ experimentell\\[1mm]
     \hline
-    28.2 mm & $\unit[(0.95841 \pm 1.1\e{-5})]{s}$ & $\unit[(0.92861 \pm 1.8\e{-5})]{s}$ & $\unit[(0.0526 \pm 0.0044)]{s^{-1}}$ & $\unit[(0.0519 \pm 0.0044)]{s^{-1}}$\\
+    28.2 mm & $\unit[0.958410(11)]{s}$ & $\unit[0.928610(18)]{s}$ & $\unit[0.0526(31)]{s^{-1}}$ & $\unit[0.0519(31)]{s^{-1}}$\\
     \hline
-    53.2 mm & $\unit[(0.95798 \pm 1.3\e{-5})]{s}$ & $\unit[(0.86739 \pm 1.1\e{-5})]{s}$ & $\unit[(0.1712 \pm 0.0044)]{s^{-1}}$ & $\unit[(0.1708 \pm 0.0044)]{s^{-1}}$\\
+    53.2 mm & $\unit[0.957980(13)]{s}$ & $\unit[0.867390(11)]{s}$ & $\unit[0.1712(31)]{s^{-1}}$ & $\unit[0.1708(31)]{s^{-1}}$\\
     \hline
-    78.2 mm & $\unit[(0.95724 \pm 3.2\e{-5})]{s}$ & $\unit[(0.79031 \pm 1.1\e{-5})]{s}$ & $\unit[(0.3466 \pm 0.0044)]{s^{-1}}$ & $\unit[(0.346988 \pm 16\e{-6})]{s^{-1}}$\\
+    78.2 mm & $\unit[0.957240(32)]{s}$ & $\unit[0.790310(11)]{s}$ & $\unit[0.3466(31)]{s^{-1}}$ & $\unit[0.3470(31)]{s^{-1}}$\\
      \hline
-    102.2 mm & $\unit[(0.95781 \pm 1.1\e{-5})]{s}$ & $\unit[(0.71542 \pm 1.1\e{-5})]{s}$ & $\unit[(0.5556 \pm 0.0044)]{s^{-1}}$ & val7\\
+    102.2 mm & $\unit[0.957810(11)]{s}$ & $\unit[0.715420(11)]{s}$ & $\unit[0.5556(31)]{s^{-1}}$ & $\unit[0.5555(31)]{s^{-1}}$\\
     \hline
-    28.2 mm (Feder 2)  & $\unit[(0.95826 \pm 1.3\e{-5})]{s}$  & $\unit[(0.91844 \pm 2.0\e{-5})]{s}$  & $\unit[(0.0711 \pm 0.0044)]{s^{-1}}$  & $\unit[(0.0706\pm0.0044)]{s^{-1}}$\\
+    28.2 mm (Feder 2)  & $\unit[0.958260(13)]{s}$  & $\unit[0.918440(20)]{s}$  & $\unit[0.0711(31)]{s^{-1}}$  & $\unit[0.0706(31)]{s^{-1}}$\\
 \end{tabular}
 }
-\caption{Aufgetragen ist der Abstand der Feder zum Aufhängepunkt in $\mathrm{[mm]}$ und die halbe Schwingungsdauer der Gleich-/Gegenschwingungen bzw. der daraus berechneten und experimentell bestimmten Schwingungsdauern $\omega_\n{S}$.}
+\caption{Angegeben wird der Abstand der Feder zum Aufhängepunkt und die halbe Schwingungsdauer der Gleich-/Gegenschwingungen bzw. die daraus berechneten und experimentell bestimmten einhüllenden Frequenzen $\omega_\n{S}$.}
 \label{tb:values}
 \end{table}
 
-Die angegebenen Fehler beziehen sich auf die Regression. Allerdings weichen die Werte für die Schwingungen in Phase, die in der Theorie gleich sind, da die Feder nicht aus ihrer Gleichgewichtslage bewegt wird. Mithilfe dieser Werte können wir unseren systematischen Fehler auf etwa $\unit[0.001]{sek}$ abschätzen. Die Berechnung des gesamten Fehlers berechnen wir also durch:
+Die angegebenen Fehler beziehen sich auf die Regression. Allerdings weichen die Werte für die Schwingungen in Phase, die in der Theorie gleich sind, da die Feder nicht aus ihrer Gleichgewichtslage bewegt wird. Mithilfe dieser Werte können wir unseren systematischen Fehler auf etwa $\unit[0.001]{s}$ abschätzen. Für Kreisfrequenzen ergibt sich somit ein Fehler von ca. $\unit[0.0031]{s^{-1}}$. Die Berechnung des gesamten Fehlers berechnen wir also durch:
 
 \begin{equation*}
 \Delta \omega_\n{S} = \sqrt{
@@ -47,7 +47,7 @@ Die angegebenen Fehler beziehen sich auf die Regression. Allerdings weichen die 
 + 
 \left(\frac{1}{2} \cdot \Delta\omega_\n{geg}\right)^2
 +
-2 \cdot 0.0044^2
+\left(\frac12 \unit[0.0031]{s^{-1}} + \frac12 \unit[0.0031]{s^{-1}} \right)^2
 }
 \end{equation*}
 
