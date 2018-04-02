@@ -1,0 +1,41 @@
+\section{Gekoppelte Pendel}
+Durch Ermittlung der Schwingungsfrequenz der Phase und der Gegenphase, kann mithilfe von Gleichung \ref{eq:schwebung} die Frequenz
+
+
+
+\begin{table}
+\resizebox{\linewidth}{!}{\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+• & 28.2 mm & 53.2 mm & 78.2 mm & 102.2 mm & 28.2 mm / Feder 2 \\ 
+\hline 
+$T$ Gleich & $(0.95841 \pm 1.1\e{-5})$ sek & $(0.95798 \pm 1.3\e{-5})$ sek & $(0.95724 \pm 3.2\e{-5})$ sek & $(0.95781 \pm 1.1\e{-5})$ sek & $(0.95826 \pm 1.3\e{-5})$ sek \\ 
+\hline 
+$T$ Gegen & $(0.92861 \pm 1.8\e{-5})$ sek & $(0.86739 \pm 1.1\e{-5})$ sek & $(0.79031 \pm 1.1\e{-5})$ sek & $(0.71542 \pm 1.1\e{-5})$ sek & $(0.91844 \pm 2.0\e{-5})$ sek \\ 
+\hline 
+$\omega_\n{S}$ berechnet & $(0.0526 \pm 0.0044)$ 1/sek & $(0.1712 \pm 0.0044)$ 1/sek & $(0.3466 \pm 0.0044)$ 1/sek & 
+$(0.5556 \pm 0.0044)$ 1/sek & $(0.0711 \pm 0.0044)$ 1/sek \\ 
+\hline 
+$\omega_\n{S}$ experimentell & $(0.0519\pm0.0044)$ 1/sek & $(0.1708\pm0.0044)$ 1/sek & val 6 & val7 & 
+$(0.0706\pm0.0044)$ 1/sek \\ 
+\hline 
+\end{tabular} }
+\caption{Aufgetragen ist der Abstand der Feder zum Aufhängepunkt in $\mathrm{[mm]}$ und die halbe Schwingungsdauer der Gleich-/Gegenschwingungen bzw. der daraus berechneten und experimentell bestimmten Schwingungsdauern $\omega_\n{S}$.}
+\label{tb:values}
+\end{table}
+
+Die angegebenen Fehler beziehen sich auf die Regression. Allerdings weichen die Werte für die Schwingungen in Phase, die in der Theorie gleich sind, da die Feder nicht aus ihrer Gleichgewichtslage bewegt wird. Mithilfe dieser Werte können wir unseren systematischen Fehler auf etwa $\unit[0.001]{sek}$ abschätzen. Die Berechnung des gesamten Fehlers berechnen wir also durch:
+
+\begin{equation*}
+\Delta \omega_\n{S} = \sqrt{
+\left(\frac{1}{2} \cdot \Delta\omega_\n{gl}\right)^2
++ 
+\left(\frac{1}{2} \cdot \Delta\omega_\n{geg}\right)^2
++
+2 \cdot 0.0044^2
+}
+\end{equation*}
+
+Wie hier sehr schön gesehen werden kann, spielen die Fehler durch die Regression kaum eine Rolle. Die größte Fehlerursache sind Störfaktoren wie z.B. unterschiedlich starke Reibung (durch unterschiedlich große Auslenkung usw.) welche sich in unterschiedlichen Messungen ändern.
+
+
+
