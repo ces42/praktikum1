@@ -1,5 +1,7 @@
 \section{Reversionspendel}
 
+\setlength{\parindent}{4ex}
+
 Die ausführliche Analyse dieses Versuchs (einschl. Rohdaten, fit-Funktionen, etc) findet sich unter \url{https://github.com/ces42/praktikum1/blob/master/PEN/Daten/Auswertung1.ipynb}.
 \\
 
@@ -26,17 +28,57 @@ Die ausführliche Analyse dieses Versuchs (einschl. Rohdaten, fit-Funktionen, et
     \caption{Periode der Schwingung des Reversionspendels in Abhängigkeit der Vertiefung an der das kleine Gewicht eingehängt wurde. Die erste Achse ist weiter entfernt vom fixen Gewicht. Die meisten Punkte repräsentieren eine Messung, Mehrfachmessungen wurden in die Fehlerbalken eingerechnet.}
     \label{diag:rev}
 \end{figure}
-
+\noindent
 Abbildung~\ref{diag:rev} Zeigt die Dauer der gemessenen Perioden. Für einen bestimmen Aufhängepunkt ergeben sich diese mit dem Satz von Steiner und Gleichung~\ref{eq:period} als
 \[
     T = 2 \pi \sqrt{\frac{J_0 + J_1 + m_1 s^2}{m_0 g \ell_0 + m_1 g s}}
 \]
 Dabei ist $J_0$ das Drehmoment und $m_0$ die Masse des Stabs und des fixen Gewichts um den Aufhängepunkt, $J_1$ und $m_1$ Eigendrehmoment bzw. Masse des verschiebbaren Gewichts und $s$ der Abstand des Schwerpunkt des verschiebbaren Gewichts vom Aufhängepunkt. Das heißt unsere Messwerte müssen einem Zusammenhang der Form
 \[
-    T^2 = \frac{a + b (x - x_0)^2}{c + (x - x_0)}
+    T^2 = \frac{a + b (x - x_0)^2}{c + (x - \xi)}
 \]
 folgen. Mit einer Fit-routine%
 \footnote{\texttt{scipy.optimize.curve\_fit}, Methode \texttt{'lm'} mit Gewichtung}
-lassen sich für beide Aufhängepunkte solche Werte bestimmen. Dabei muss man beachten, dass die Startparameter bzw. ihre Differenzen bereits die richtigen Vorzeichen haben sollten, da der Parameterraum durch die Singularitäten der fit-Funktion in mehrere Teile geteilt wird und eine fit-routine in der Regel nicht zwischen diesen wechseln kann.
+lassen sich für beide Aufhängepunkte solche Werte bestimmen. Dabei muss man beachten, dass die Startparameter bzw. ihre Differenzen bereits die richtigen Vorzeichen haben sollten, da der Parameterraum durch die Singularitäten der fit-Funktion in mehrere Zusammenhangkomponenten geteilt wird und eine fit-routine in der Regel nicht zwischen diesen wechseln kann.
 
-Wir erhalten somit für jeden Aufhängepunkt einen Fit mittels eines Parametervektors $\vec{p} = (a, b, c, x_0)$
+Somit erhält man für jeden Aufhängepunkt einen Fit mittels eines Parametervektors $\vec{p}^{(i)} = (a_i, b_i, c_i, \xi_i)$ und eine Kurve $y_i = y(x; \vec{p}^{(i)})$.
+
+Die Aufgabenstellung schlägt an dieser stelle eine relativ primitive Fehlerabschätzung mittels einer Maximum-Minimum-Betrachtung mit vier weiteren Ausgleichskurven vor. Da aber zumindest einer der Autoren über das Wochenende nichts besseres zu tun hatte verwenden wir eine etwas ausgeklügeltere Methode. Dafür benötigen wir als das Differential der gesuchten Werte von $T$ bzw. $T^2$ bezüglich der durch die Regression geschätzten Parameter $\vec{p}^{(1)}$ und $\vec{p}^{(1)}$.
+
+Wir bezeichnen nun mit $x_{-}(\vec{p}^{(1)}, \vec{p}^{(2)})$ und $x_{+}(\vec{p}^{(1)}, \vec{p}^{(2)})$ die beiden gesuchten Schnittpunkte von $y_1$ und $y_2$. Da es sich hierbei um Nullstellen von $y1 - y2$ handelt gilt
+%
+\begin{align*}
+               && 0 &= \d(y_1(x_{\pm}; \vec{p}^{(1)}) - y_2(x_{\pm}; \vec{p}^{(2)})) \\
+                 && &=  \pdiff{y_1}{x} \d x_{\pm} + \pdiff{y_1}{\vec{p}^{(1)}} \cdot \d \vec{p}^{(1)}
+                      - \pdiff{y_2}{x} \d x_{\pm} - \pdiff{y_2}{\vec{p}^{(2)}} \cdot \d \vec{p}^{(2)} \\[2mm]
+\Longrightarrow&& \d x_{\pm} &= \left(\pdiff{y_2}{x} - \pdiff{y_1}{x}\right)^{-1}
+                                \left( \pdiff{y_1}{\vec{p}^{(1)}}\cdot \d \vec{p}^{(1)} - \pdiff{y_2}{\vec{p}^{(2)}} \cdot \d \vec{p}^{(2)} \right)
+\end{align*}
+%
+Hiermit folgt
+%
+\begin{align*}
+    \d y_1(x_{\pm}; \vec{p}^{(1)}) &= \pdiff{y_1}{x} \d x_{\pm} + \pdiff{y_1}{\vec{p}^{(1)}} \cdot \d \vec{p}^{(1)} \\
+                                   &= \frac{\partial y_2 / \partial x}{\partial y_2 / \partial x - \partial y_1 / \partial x} \pdiff{y_1}{\vec{p}^{(1)}} \cdot \d \vec{p}^{(1)} + 
+                                   \frac{\partial y_1 / \partial x}{\partial y_1 / \partial x - \partial y_2 / \partial x} \pdiff{y_2}{\vec{p}^{(2)}} \cdot \d \vec{p}^{(2)} \\
+                                   &= r_i \d p^{(1)}_i + s_i \d p^{(2)}_i
+\end{align*}
+%
+wobei $\vec{r}$ und $\vec{s}$ die entsprechenden Vektoren, die sich aus der vorletzten Zeile ergeben, sind und in der letzten Zeile im Sinne der Summenkonvention zu verstehen ist.
+Für die Fehlerrechnung benötigen wir die Varianz von $y$, für die gilt
+\begin{align*}
+    \var(y) &\approx \var(y_0 + \d y) \,=\, \var(\d y) \,=\, \cov(\d y, \d y)
+\end{align*}
+Dabei ist mit $y_0$ der echte und mit $y = y_0 + \d y$ der gemessene Wert gemeint, der um ein Zufälliges $\d y$ von $y_0$ abweicht. Unter Benutzung der Bilinearität der Kovarianz erhalten wir weiter
+%
+\begin{align*}
+\cov(\d y, \d y) &= \cov(r_i \d p^{(1)}_i + s_i \d p^{(2)}_i, r_j \d p^{(1)}_j + s_j \d p^{(2)}_j) \\
+            &= r_i \cov(\d p^{(1)}_i, \d p^{(1)}_j) r_j + s_i \cov(\d p^{(2)}_i, \d p^{(2)}_j) s_j \\
+            &= r_i \Sigma^{(1)}_{i j} r_j + s_i \Sigma^{(2)}_{i j} s_j
+\end{align*}
+%
+Dabei nehmen wir an, dass $\d \vec{p}^{(1)}$ und $\d \vec{p}^{(2)}$ unkorreliert sind, da sie aus unabhängigen Messungen berechnet wurden (wir betrachten momentan nur statistische Fehler). $\Sigma^{(k)}_{i j}$ sind die entsprechenden Kovarianzmatrizen, die von der Fit-Funktion geliefert werden. 
+
+
+%Die $x$-Koordinaten der Schnittpunkte sind die Nullstellen von $f(x, \vec{p}_1, \vec{p}_2) = y(x; \vec{p}_1) - y(x; \vec{p}_2)$ und wir sind interessiert am Wert $y()$
+
