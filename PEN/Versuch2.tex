@@ -24,15 +24,15 @@ Durch Ermittlung der Schwingungsfrequenz der Phase und der Gegenphase, kann mith
 \begin{tabular}{ccccc}
     Loch bei & $T_\mathrm{gl}/2$ & $T_\mathrm{geg}/2$ & $\omega_\n{S}$ berechnet & $\omega_\n{S}$ experimentell\\[1mm]
     \hline
-    28.2 mm & $\unit[0.958410(11)]{s}$ & $\unit[0.928610(18)]{s}$ & $\unit[0.0526(31)]{s^{-1}}$ & $\unit[0.0519(31)]{s^{-1}}$\\
+    28.2 cm & $\unit[0.958410(11)]{s}$ & $\unit[0.928610(18)]{s}$ & $\unit[0.0526(31)]{s^{-1}}$ & $\unit[0.0519(31)]{s^{-1}}$\\
     \hline
-    53.2 mm & $\unit[0.957980(13)]{s}$ & $\unit[0.867390(11)]{s}$ & $\unit[0.1712(31)]{s^{-1}}$ & $\unit[0.1708(31)]{s^{-1}}$\\
+    53.2 cm & $\unit[0.957980(13)]{s}$ & $\unit[0.867390(11)]{s}$ & $\unit[0.1712(31)]{s^{-1}}$ & $\unit[0.1708(31)]{s^{-1}}$\\
     \hline
-    78.2 mm & $\unit[0.95724(3)]{s}$ & $\unit[0.790310(11)]{s}$ & $\unit[0.3466(31)]{s^{-1}}$ & $\unit[0.3470(31)]{s^{-1}}$\\
+    78.2 cm & $\unit[0.95724(3)]{s}$ & $\unit[0.790310(11)]{s}$ & $\unit[0.3466(31)]{s^{-1}}$ & $\unit[0.3470(31)]{s^{-1}}$\\
      \hline
-    102.2 mm & $\unit[0.957810(11)]{s}$ & $\unit[0.715420(11)]{s}$ & $\unit[0.5556(31)]{s^{-1}}$ & $\unit[0.5555(31)]{s^{-1}}$\\
+    102.2 cm & $\unit[0.957810(11)]{s}$ & $\unit[0.715420(11)]{s}$ & $\unit[0.5556(31)]{s^{-1}}$ & $\unit[0.5555(31)]{s^{-1}}$\\
     \hline
-    28.2 mm (Feder 2)  & $\unit[0.958260(13)]{s}$  & $\unit[0.918440(20)]{s}$  & $\unit[0.0711(31)]{s^{-1}}$  & $\unit[0.0706(31)]{s^{-1}}$\\
+    28.2 cm (Feder 2)  & $\unit[0.958260(13)]{s}$  & $\unit[0.918440(20)]{s}$  & $\unit[0.0711(31)]{s^{-1}}$  & $\unit[0.0706(31)]{s^{-1}}$\\
 \end{tabular}
 }
 \caption{Angegeben wird der Abstand der Feder zum Aufhängepunkt und die halbe Schwingungsdauer der Gleich-/Gegenschwingungen bzw. die daraus berechneten und experimentell bestimmten einhüllenden Frequenzen $\omega_\n{S}$. Die Fehler bei $T_\mathrm{gl}/2$ und $T_\mathrm{geg}/2$ sind rein statistisch, bei $\omega_\mathrm{S}$ wurde der systematische Fehler berücksichtigt.}
@@ -52,6 +52,100 @@ Die angegebenen Fehler beziehen sich auf die Regression. Allerdings weichen die 
 \end{equation*}
 
 Wie hier sehr schön gesehen werden kann, spielen die Fehler durch die Regression kaum eine Rolle. Die größte Fehlerursache sind Störfaktoren wie z.B. unterschiedlich starke Reibung (durch unterschiedlich große Auslenkung usw.) welche sich in unterschiedlichen Messungen ändern.
+
+
+% Aufgabe 13 -----------------------------------------------------------------------------
+
+
+\begin{figure}[h]
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=1.0\plotheight, width=\plotwidth,
+    xlabel={Kopplungsabstand $r$}, ylabel={$\omega_\mathrm{S}$ und $\omega_\mathrm{M}$ in $\unit{s^{-1}}$},
+    only marks,
+    xmin=.22, xmax=1.08,
+    ymax=4.15, ymin=-0.25,
+    legend entries={Messwerte für $\omega_\mathrm{S}$, Theoriekurve, Messwerte für $\omega_\mathrm{M}$, Theoriekurve},
+    legend style={at={(0.98,0.51)}, anchor=east},
+    y tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=1,
+        /tikz/.cd
+    },
+    x tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=1,
+        /tikz/.cd
+    }
+    ]
+    \addplot+ [color=blue, mark=o] table [x=r, y=w_S, col sep=comma] {./Daten/aufgabe13.csv};
+    \addplot[domain=0.25:1.05, color=blue, smooth, thick, mark size=0] {-0.5*3.2805 + 0.5*sqrt(3.2805^2 + 2.8214^2*(x + 0.01294)^2)};
+    % 
+    \addplot+ [color=red, mark=square] table [x=r, y=w_M, col sep=comma] {./Daten/aufgabe13.csv};
+    \addplot[domain=0.25:1.05, color=red, smooth, thick, mark size=0] {0.5*3.2805 + 0.5*sqrt(3.2805^2 + 2.8211^2*(x + 0.01294)^2)};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Die Schwebungsparameter $\omega_\mathrm{S}$ und $\omega_\mathrm{M}$ in Abhängigkeit des Kopplungsabstands $r$ und die entsprechende Theoriekurve. Der Fehler ist kleiner als die Datenpunkte}
+    \label{diag:wassolldas}
+\end{figure}
+
+
+\begin{figure}[h]
+    \begin{tikzpicture}
+    \begin{axis}[
+    height=0.9\plotheight, width=\plotwidth,
+    xlabel={Kopplungsabstand $r$}, ylabel={Kopplungsgrad $K$},
+    only marks,
+    legend entries={Messwerte, Theoriekurve},
+    legend pos=south east,
+    %xmin=.23, xmax=1.07,
+    %ymax=4.15, ymin=-0.25
+    y tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=2,
+        /tikz/.cd
+    },
+    x tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=1,
+        /tikz/.cd
+    }
+    ]
+    \addplot+ [color=blue, mark=o, error bars/.cd, y dir=both, y explicit] table [x=r, y=K, y error=err_K, col sep=comma] {./Daten/aufgabe13.csv};
+    \addplot[domain=0.25:1.05, color=blue, smooth, thick, mark size=0] {(x + 0.01294)^2 / (2.7045 + (x + 0.01294)^2)};
+    % 
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Die Schwebungsparameter $\omega_\mathrm{S}$ und $\omega_\mathrm{M}$ in Abhängigkeit des Kopplungsabstands $r$ und die entsprechende Theoriekurve. Der Fehler ist kleiner als die Datenpunkte}
+    \label{diag:K}
+\end{figure}
+
+Diagramm~\ref{diag:wassolldas} Zeig die $r$-Abhängigkeit von $\omega_\mathrm{S}$ und $\omega_\mathrm{M}$ und Diagramm~\ref{diag:K} die des Kopplungsgrades $K$.
+
+Wir erwarten gemäß der Theorie, das $\omega_\mathrm{gl}$ konstant ist und weiter der Zusammenhand ${\omega_\mathrm{geg}}^2 = {\omega_\mathrm{gl}}^2 + 2 \frac{d \cdot r^2}{J}$ gilt. Mit Gleichungen~\ref{eq:avg} und \ref{eq:schwebung} ergeben sich die entsprechenden Beziehungen für $\omega_\mathrm{S}$ und $\omega_\mathrm{M}$. Unsere Messwerte folgen einem solchen Zusammenhang ideal (siehe Theoriekurven in Diagramm~\ref{diag:wassolldas}) falls man $r$ durch $r + \unit[1.3]{cm}$ substituiert. Das liegt wahrscheinlich daran, dass bei den Messungen von $r$ systematisch um diese Länge falsch gemessen wurde%
+\footnote{tatsächlich hatten wir vergessen diese Strecken zu Messen und die Werte von einer anderen Gruppe erhalten.}%
+.
+Auch die Werte von $K$ passen, nach Korrektur von $r$, perfekt in den theoretischen Zusammenhang aus Gleichung~\ref{eq:kopplung}.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
